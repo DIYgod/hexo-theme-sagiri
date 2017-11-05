@@ -37,7 +37,7 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2015
 
   # Icon between year and copyright info.
   icon: user
@@ -85,13 +85,13 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
-  #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  schedule: /schedule/ || calendar
+  sitemap: /sitemap.xml || sitemap
+  commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -103,9 +103,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+# scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 #scheme: Gemini
 
 
@@ -118,17 +118,9 @@ scheme: Muse
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
-  #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
-  #FB Page: https://www.facebook.com/yourname || facebook
-  #VK Group: https://vk.com/yourname || vk
-  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
-  #YouTube: https://youtube.com/yourname || youtube
-  #Instagram: https://instagram.com/yourname || instagram
-  #Skype: skype:yourname?call|chat || skype
+social:
+  GitHub: https://github.com/yourname || github
+  Twitter: https://twitter.com/yourname || twitter
 
 social_icons:
   enable: true
@@ -140,13 +132,13 @@ links_icon: link
 links_title: Links
 links_layout: block
 #links_layout: inline
-#links:
-  #Title: http://example.com/
+links:
+  Title: http://example.com/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar: /images/avatar.gif
 
 # Table Of Contents in the Sidebar
 toc:
@@ -166,16 +158,16 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
-  position: left
-  #position: right
+  # position: left
+  position: right
 
   # Sidebar Display, available value (only for Muse | Mist):
   #  - post    expand on posts automatically. Default.
   #  - always  expand for all pages automatically
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
-  display: post
-  #display: always
+  # display: post
+  display: always
   #display: hide
   #display: remove
 
@@ -234,10 +226,10 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-#reward_comment: Donate comment here
-#wechatpay: /images/wechatpay.jpg
-#alipay: /images/alipay.jpg
-#bitcoin: /images/bitcoin.png
+reward_comment: Donate comment here
+wechatpay: /images/wechatpay.jpg
+alipay: /images/alipay.jpg
+bitcoin: /images/bitcoin.png
 
 # Declare license on posts
 post_copyright:
@@ -285,10 +277,10 @@ highlight_theme: normal
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
-  host:
+  host: //fonts.cat.net
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -353,7 +345,7 @@ han: false
 # Disqus
 disqus:
   enable: false
-  shortname:
+  shortname: DIYgod
   count: true
 
 # Hypercomments
@@ -432,14 +424,14 @@ gitment:
 #           Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
 needmoreshare2:
   enable: false
-  postbottom: 
+  postbottom:
     enable: false
     options:
       iconStyle: box
       boxForm: horizontal
       position: bottomCenter
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
-  float: 
+  float:
     enable: false
     options:
       iconStyle: box
@@ -452,7 +444,7 @@ needmoreshare2:
 #google_site_verification:
 
 # Google Analytics
-#google_analytics:
+google_analytics: UA-48084758-7
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
@@ -518,9 +510,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: Ti5mwFDXXbpWqeWdaydLNfOS-gzGzoHsz
+  app_key: rXpryRyVs5jlk2LAGGI1bfEd
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -689,8 +681,8 @@ canvas_sphere: false
 # alpha: The transparency of the ribbon.
 # zIndex: The display level of the ribbon.
 canvas_ribbon:
-  enable: false
-  size: 300
+  enable: true
+  size: 100
   alpha: 0.6
   zIndex: -1
 
@@ -705,36 +697,36 @@ vendors:
   _internal: lib
 
   # Internal version: 2.1.3
-  jquery:
+  jquery: https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  fancybox:
-  fancybox_css:
+  fancybox: https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js
+  fancybox_css: https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
-  fastclick:
+  fastclick: https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
-  lazyload:
+  lazyload: https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity:
+  velocity: https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity_ui:
+  velocity_ui: https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser:
+  ua_parser: https://cdn.bootcss.com/UAParser.js/0.7.9/ua-parser.min.js
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome:
+  fontawesome: https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
@@ -746,8 +738,8 @@ vendors:
   # Or use direct links below:
   # pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
   # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
-  pace:
-  pace_css:
+  pace: https://cdn.bootcss.com/pace/1.0.2/pace.min.js
+  pace_css: https://cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
@@ -774,7 +766,7 @@ vendors:
 
   # Internal version: 3.3.0
   # https://github.com/ethantw/Han
-  han:
+  han: https://cdn.bootcss.com/Han/3.3.0/han.min.js
 
   # needMoreShare2
   # https://github.com/revir/need-more-share2

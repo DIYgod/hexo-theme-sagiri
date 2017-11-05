@@ -1,7 +1,7 @@
 {% if theme.leancloud_visitors.enable %}
 
   {# custom analytics part create by xiamo #}
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script src="//cdn1.lncld.net/static/js/3.3.1/av-min.js"></script>
   <script>AV.initialize("{{theme.leancloud_visitors.app_id}}", "{{theme.leancloud_visitors.app_key}}");</script>
   <script>
     function showTime(Counter) {
@@ -15,7 +15,7 @@
 
       query.containedIn('url', entries);
       query.find()
-        .done(function (results) {
+        .then(function (results) {
           var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
 
           if (results.length === 0) {
@@ -40,7 +40,7 @@
             }
           }
         })
-        .fail(function (object, error) {
+        .then(function (object, error) {
           console.log("Error: " + error.code + " " + error.message);
         });
     }
@@ -52,21 +52,20 @@
       var query = new AV.Query(Counter);
 
       query.equalTo("url", url);
-      query.find({
-        success: function(results) {
+      query.find()
+        .then(function(results) {
           if (results.length > 0) {
             var counter = results[0];
             counter.fetchWhenSave(true);
             counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
+            counter.save()
+              .then(function(counter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
+              })
+              .then(function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
+              });
           } else {
             var newcounter = new Counter();
             /* Set ACL */
@@ -78,21 +77,19 @@
             newcounter.set("title", title);
             newcounter.set("url", url);
             newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
+            newcounter.save()
+              .then(function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
+              })
+              .then(function(newcounter, error) {
                 console.log('Failed to create');
-              }
-            });
+              });
           }
-        },
-        error: function(error) {
+        })
+        .then(function(error) {
           console.log('Error:' + error.code + " " + error.message);
-        }
-      });
+        })
     }
 
     $(function() {

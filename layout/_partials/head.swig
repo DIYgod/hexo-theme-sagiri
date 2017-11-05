@@ -146,9 +146,20 @@
       indexName: '{{ theme.algolia.indexName }}',
       hits: {{ theme.algolia_search.hits | json_encode }},
       labels: {{ theme.algolia_search.labels | json_encode }}
+    },
+    leancloud: {
+      enable: {{theme.leancloud_visitors.enable}},
+      appID: '{{theme.leancloud_visitors.app_id}}',
+      appKey: '{{theme.leancloud_visitors.app_key}}'
     }
   };
 </script>
+{% set js_vendors = {} %}
+{% set js_vendors.jquery      = 'jquery/index.js?v=2.1.3' %}
+{% for name, internal in js_vendors %}
+  {% set internal_script = url_for(theme.vendors._internal) + '/' + internal %}
+    <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
+{% endfor %}
 
 {# Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 #}
 {% if theme.canonical %}

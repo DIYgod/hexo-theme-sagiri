@@ -58,6 +58,8 @@
       </div>
     {% endif %}
 
+    <canvas id="evanyou"></canvas>
+
     {% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}
       <div id="needsharebutton-float">
         <span class="btn">
@@ -68,19 +70,10 @@
 
   </div>
 
-  {% include '_scripts/vendors.swig' %}
-  {% include '_scripts/commons.swig' %}
-
-  {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
-  {% include scheme_script %}
-
-  {% block script_extra %}{% endblock %}
-
-  {% include '_scripts/boostrap.swig' %}
+  <script type="text/javascript" src="{{ url_for(theme.js) }}/sagiri.min.js?v={{ theme.version }}"></script>
 
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
-  {% include '_third-party/analytics/lean-analytics.swig' %}
   {% include '_third-party/seo/baidu-push.swig' %}
   {% include '_third-party/needsharebutton.swig' %}
   {% include '_third-party/rating.swig' %}
