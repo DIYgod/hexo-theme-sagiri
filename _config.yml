@@ -86,12 +86,10 @@ index_with_subtitle: false
 menu:
   home: / || home
   about: /about/ || user
-  tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
   schedule: /schedule/ || calendar
   sitemap: /sitemap.xml || sitemap
-  commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -138,7 +136,7 @@ links:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-avatar: /images/avatar.gif
+avatar: /images/DIYgod.jpg
 
 # Table Of Contents in the Sidebar
 toc:
@@ -344,9 +342,9 @@ han: false
 
 # Disqus
 disqus:
-  enable: false
+  enable: true
   shortname: DIYgod
-  count: true
+  count: false
 
 # Hypercomments
 #hypercomments_id:

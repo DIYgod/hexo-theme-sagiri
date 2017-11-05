@@ -1,5 +1,11 @@
 .site-nav {
-  border-top: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+  z-index: 3;
+  background: #000;
+  background: rgba(40,42,44,.6);
 
   +tablet() {
     display: none !important;
@@ -12,42 +18,49 @@
   }
 }
 
+.menu {
+  margin-top: 0;
+  margin: 0 auto;
+  max-width: 80%;
+  position: relative;
+  text-align: left;
+}
+
 .menu .menu-item {
-  display: block;
-  margin: 0;
+  border: 0;
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  position: relative;
+  text-align: left;
 
   a {
     position: relative;
     box-sizing: border-box;
-    padding: 5px 20px;
+    padding: 0 12px;
     text-align: left;
     line-height: inherit;
     transition-property: background-color;
     the-transition();
+    color: #fff;
+    font-size: 14px;
 
     &:hover {
       background: #f9f9f9;
       border-bottom-color: white;
+      color: #555;
+    }
+
+    .fa {
+      margin-right: 2px;  
     }
   }
 
-  br { display: none; }
-}
-
-.menu-item-active a {
-  @extend .menu .menu-item a:hover;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    margin-top: -3px;
-    right: 15px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: $grey;
+  &.menu-item-active a {
+    @extend .menu .menu-item a:hover;
   }
+
+  br { display: none; }
 }
 
 .btn-bar {
@@ -63,5 +76,51 @@
 
   +tablet() {
     display: block;
+  }
+}
+
+.site-title {
+  position: relative;
+  font-family: kilsonburg,Avenir Next,Helvetica,Arial,Lantinghei SC,Microsoft YaHei,sans-serif;
+  font-size: 68px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 1px 1px #47456d;
+  margin-bottom: 130px;
+  z-index: 1;
+}
+
+.site-subtitle {
+  text-align: center;
+  text-shadow: 0 1px 1px #47456d;
+  color: #fff;
+  font-size: 30px;
+}
+
+.site-master {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  top: -170px;
+  padding: 40px 0;
+  padding-bottom: 40px;
+  font-size: 16px;
+  opacity: .98;
+  background: rgba(230,244,249,.8);
+  z-index: 1;
+  animation: b 1s ease-out;
+  position: relative;
+  border-radius: 5px;
+
+  .site-master-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+  }
+
+  .site-master-description {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 0 0;
   }
 }

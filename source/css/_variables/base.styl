@@ -46,8 +46,7 @@ $border-color                 = $grey-light
 $body-bg-color                = white
 
 // Selection
-$selection-bg                 = $blue-deep
-$selection-color              = white
+$selection-bg                 = rgba(0,149,255,.2)
 
 
 
@@ -65,7 +64,7 @@ get_font_family(config) {
 $font-family-chinese      = "PingFang SC", "Microsoft YaHei"
 
 $font-family-base         = $font-family-chinese, sans-serif
-$font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
+$font-family-base         = $font-family-chinese, get_font_family('global'), sans-serif if get_font_family('global')
 
 $font-family-logo         = $font-family-base
 $font-family-logo         = get_font_family('logo'), $font-family-base if get_font_family('logo')
