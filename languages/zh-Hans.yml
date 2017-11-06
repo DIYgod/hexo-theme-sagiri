@@ -90,9 +90,9 @@ symbol:
   colon: '：'
 
 reward:
-  donate: 打赏
-  wechatpay: 微信支付
-  alipay: 支付宝
+  donate: 赞赏
+  wechatpay: 微信扫一扫，向我赞赏
+  alipay: 支付宝扫一扫，向我赞赏
   bitcoin: 比特币
 
 gitmentbutton: 显示 Gitment 评论

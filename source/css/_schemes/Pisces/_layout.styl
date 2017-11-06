@@ -1,3 +1,7 @@
+body {
+  background: #efefef;
+}
+
 .header {
   position: relative;
   margin: 0 auto;
@@ -14,7 +18,7 @@
 .header-inner {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  height: 750px;
   padding: 0;
   box-shadow: $box-shadow-inner;
   border-radius: $border-radius-inner;
@@ -58,9 +62,7 @@
 .content-wrap {
   float: right;
   box-sizing: border-box;
-  padding: $content-desktop-padding;
   width: $content-desktop;
-  background: white;
   min-height: 700px;
   box-shadow: $box-shadow-inner;
   border-radius: $border-radius-inner;
@@ -126,3 +128,29 @@
   }
 }
 
+#evanyou {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+a {
+  border-bottom: 0;
+  color: #385966;
+}
+
+.btn {
+  background: $main-color;
+  color: #fff;
+  font-size: 13px;
+  padding: 1px 15px;
+  border-radius: 5px;
+  border: none;
+
+  &:hover {
+    background: $second-color;
+  }
+}

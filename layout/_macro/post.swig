@@ -14,6 +14,22 @@
   {##################}
   {### POST BLOCK ###}
   {##################}
+  <div class="post-date">
+			<div class="post-month">{{ date(post.date, 'MM') }}月</div>
+			<div class="post-day">{{ date(post.date, 'DD') }}</div>
+	</div>
+  {% if post.categories and post.categories.length and theme.post_meta.categories %}
+  <div class="post-badge">
+    {% for cat in post.categories %}
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
+          <span itemprop="name">{{ cat.name }}</span>
+        </a>
+      </span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
@@ -75,7 +91,7 @@
             {% endif %}
 
             {% if theme.post_meta.created_at and theme.post_meta.updated_at %}
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             {% endif %}
 
             {% if theme.post_meta.updated_at %}
@@ -94,7 +110,7 @@
           {% if post.categories and post.categories.length and theme.post_meta.categories %}
             <span class="post-category" >
             {% if theme.post_meta.created_at or theme.post_meta.updated_at %}
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             {% endif %}
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -120,7 +136,7 @@
           {% if post.comments %}
             {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}
               <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+                <span class="post-meta-divider">•</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
@@ -130,7 +146,7 @@
               </span>
             {% elseif theme.facebook_comments_plugin.enable %}
               <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+                <span class="post-meta-divider">•</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
@@ -140,7 +156,7 @@
               </span>
             {% elseif theme.disqus.enable and theme.disqus.count %}
               <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+                <span class="post-meta-divider">•</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
@@ -152,7 +168,7 @@
             {% elseif theme.hypercomments_id %}
             <!--noindex-->
               <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+                <span class="post-meta-divider">•</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
@@ -163,7 +179,7 @@
               <!--/noindex-->
             {% elseif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
               <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-comment-o"></i>
               </span>
@@ -178,7 +194,7 @@
               {% endif %}
             {% elseif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
               <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+                <span class="post-meta-divider">•</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
@@ -192,7 +208,7 @@
           {# LeanCould PageView #}
           {% if theme.leancloud_visitors.enable %}
              <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-               <span class="post-meta-divider">|</span>
+               <span class="post-meta-divider">•</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
@@ -204,7 +220,7 @@
           {% endif %}
 
           {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
-            <span class="post-meta-divider">|</span>
+            <span class="post-meta-divider">•</span>
             <span class="page-pv">{{ theme.busuanzi_count.page_pv_header }}
             <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>{{ theme.busuanzi_count.page_pv_footer }}
             </span>
@@ -214,7 +230,7 @@
             <div class="post-wordcount">
               {% if theme.post_wordcount.wordcount %}
                 {% if not theme.post_wordcount.separated_meta %}
-                  <span class="post-meta-divider">|</span>
+                  <span class="post-meta-divider">•</span>
                 {% endif %}
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
@@ -228,7 +244,7 @@
               {% endif %}
 
               {% if theme.post_wordcount.wordcount and theme.post_wordcount.min2read %}
-                <span class="post-meta-divider">|</span>
+                <span class="post-meta-divider">•</span>
               {% endif %}
 
               {% if theme.post_wordcount.min2read %}
@@ -330,6 +346,8 @@
       </div>
     {% endif %}
 
+    <div class="post-share">分享到：</div>
+
     {% if (theme.alipay or theme.wechatpay or theme.bitcoin) and not is_index %}
       <div>
         {% include 'reward.swig' %}
@@ -378,7 +396,7 @@
 
         {% if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
           {% if (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-            <span class="post-meta-divider">|</span>
+            <span class="post-meta-divider">•</span>
           {% endif %}
           <div id="needsharebutton-postbottom">
             <span class="btn">
@@ -410,11 +428,6 @@
             {% endif %}
           </div>
         </div>
-      {% endif %}
-
-      {% set isLast = loop.index % page.per_page === 0 %}
-      {% if is_index and not isLast %}
-        <div class="post-eof"></div>
       {% endif %}
     </footer>
   </div>

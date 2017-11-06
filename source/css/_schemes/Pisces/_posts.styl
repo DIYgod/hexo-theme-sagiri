@@ -3,3 +3,154 @@
     text-align: justify;
   }
 }
+
+.posts-expand {
+  padding-top: 0;
+
+  .post-title-link {
+    color: #444;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .post-meta {
+    color: #555;
+    margin-top: 5px;
+  }
+}
+
+.post {
+  position: relative;
+  padding: $content-desktop-padding;
+  background: #fff;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+
+.post-date {
+  background-color: $main-color;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  position: absolute;
+  top: -20px;
+  left: -30px;
+  height: 60px;
+  width: 70px;
+  padding-top: 10px;
+  border-radius: 100px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.1;
+
+  .post-day {
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+.post-badge {
+  position: absolute;
+  left: -16px;
+  top: 105px;
+  border-color: $second-color;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  background-color: #97dffd;
+  margin: 5px 0 15px 2px;
+  font-size: 14px;
+  border-radius: 0 4px 4px 0;
+  display: inline-block;
+  padding: 7px 11px 7px 32px;
+  line-height: 1;
+
+  a {
+    color: #fff;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    border-top: 0 solid transparent;
+    border-right-width: 1em;
+    border-right-color: inherit;
+    border-right-style: solid;
+    border-bottom: 1em solid transparent;
+    border-left: 0 solid transparent;
+    width: 0;
+    height: 0;
+  }
+}
+
+.pagination {
+  margin: 20px 0;
+  border-top: none;
+
+  .page-number {
+    background: $main-color;
+    color: #fff;
+    border-radius: 5px;
+    border-top: none;
+
+    &:hover {
+      background: $second-color;
+      border-top: none;
+    }
+
+    &.current {
+      background: $second-color;
+    }
+  }
+
+  .extend {
+    border-top: none;
+    &:hover {
+      border-top: none;
+    }
+  }
+}
+
+#rewardButton {
+  span {
+    background: #e26d6d;
+    height: 34px;
+    width: 80px;
+    border-radius: 4px;
+    line-height: 34px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}
+
+#wechat {
+  color: #44b549;
+
+  &:hover {
+    p {
+      animation: none;
+    }
+  }
+}
+
+#alipay {
+  color: #00a0e9;
+
+  &:hover {
+    p {
+      animation: none;
+    }
+  }
+}
+
+.post-nav-item .fa {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.comments {
+  background: #fff;
+  margin: 0;
+  padding: 40px;
+  border-radius: 5px;
+}

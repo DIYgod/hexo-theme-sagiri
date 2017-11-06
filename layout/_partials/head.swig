@@ -71,6 +71,12 @@
 {% endif %}
 <link href="{{ font_awesome_uri }}" rel="stylesheet" type="text/css" />
 
+{% set social_share_uri = url_for(theme.vendors._internal + '/social-share.js/css/share.min.css?v=1.0.9') %}
+{% if theme.vendors.fontawesome %}
+  {% set social_share_uri = theme.vendors.social_share_css %}
+{% endif %}
+<link href="{{ social_share_uri }}" rel="stylesheet" type="text/css" />
+
 <link href="{{ url_for(theme.css) }}/main.css?v={{ theme.version }}" rel="stylesheet" type="text/css" />
 
 {% if theme.favicon.apple_touch_icon %}
@@ -136,6 +142,11 @@
     fancybox: {{ theme.fancybox }},
     tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
+    site: {
+      title: '{{ theme.title }}',
+      subtitle: '{{ theme.subtitle }}',
+      author: '{{ theme.author }}'
+    },
     duoshuo: {
       userId: '{{ theme.duoshuo_info.user_id | default() }}',
       author: '{{ theme.duoshuo_info.admin_nickname | default(__('author'))}}'

@@ -13,6 +13,6 @@ require('./post-details');
 require('./bootstrap');
 require('./evanyou');
 // require('./disqus');
-if (window.CONFIG.leancloud.enable) {
-  require('./leancloud');
-}
+require('./leancloud');
+require('./share');
+require('./scroll');

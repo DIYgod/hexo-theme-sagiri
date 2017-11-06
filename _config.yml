@@ -224,10 +224,10 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-reward_comment: Donate comment here
-wechatpay: /images/wechatpay.jpg
-alipay: /images/alipay.jpg
-bitcoin: /images/bitcoin.png
+reward_comment:
+wechatpay: /images/wechatpay.png
+alipay: /images/alipay.png
+bitcoin:
 
 # Declare license on posts
 post_copyright:
@@ -726,6 +726,8 @@ vendors:
   # See: http://fontawesome.io/
   fontawesome: https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css
 
+  social_share_css: https://cdnjs.cat.net/ajax/libs/social-share.js/1.0.9/css/share.min.css
+
   # Internal version: 1
   # https://www.algolia.com
   algolia_instant_js:
@@ -778,3 +780,5 @@ images: images
 
 # Theme version
 version: 5.1.3
+
+header_bg: https://diygod.b0.upaiyun.com/header-sagiri.jpg
