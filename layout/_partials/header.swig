@@ -72,9 +72,9 @@
     </button>
   </div>
 </div>
-<div class="site-master">
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-master-avatar" itemprop="image" src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}" alt="{{ theme.author }}" />
-    <h2 class="site-master-description">
+    <h2 class="site-master-description" itemprop="description">
         {{ theme.description }}
     </h2>
 </div>

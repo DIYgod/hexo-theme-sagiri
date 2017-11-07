@@ -346,7 +346,9 @@
       </div>
     {% endif %}
 
-    <div class="post-share">分享到：</div>
+    {% if not is_index %}
+      <div class="post-share">分享到：</div>
+    {% endif %}
 
     {% if (theme.alipay or theme.wechatpay or theme.bitcoin) and not is_index %}
       <div>

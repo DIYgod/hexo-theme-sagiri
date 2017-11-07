@@ -86,18 +86,20 @@
   border-top: none;
 
   .page-number {
-    background: $main-color;
-    color: #fff;
+    background: #fff;
+    color: $main-color;
     border-radius: 5px;
-    border-top: none;
+    border: 1px solid $main-color;
 
     &:hover {
-      background: $second-color;
-      border-top: none;
+      background: $main-color;
+      color: #fff;
+      border-top-color: $main-color;
     }
 
     &.current {
       background: $second-color;
+      border: 1px solid $second-color;
     }
   }
 

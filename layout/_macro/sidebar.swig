@@ -31,18 +31,44 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             {% if theme.avatar %}
               <img class="site-author-image" itemprop="image"
-                src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}"
+                src="{{ url_for( theme.card.avatar | default(theme.images + '/card.jpg') ) }}"
                 alt="{{ theme.author }}" />
             {% endif %}
-              <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
+              <p class="site-author-name" itemprop="name">{{ theme.card.name }}</p>
               <p class="site-description motion-element" itemprop="description">{#
             #}{% if theme.seo %}{#
               #}{{ theme.signature }}{#
             #}{% else %}{#
-              #}{{ theme.description }}{#
+              #}{{ theme.card.description }}{#
             #}{% endif %}{#
             #}</p>
           </div>
+
+          <div class="links-of-author motion-element">
+            {% if theme.social %}
+              {% for name, link in theme.social %}
+                <span class="links-of-author-item">
+                  <a href="{{ link.split('||')[0] | trim }}" target="_blank" title="{{ name }}">
+                    {% if theme.social_icons.enable %}
+                      <i class="fa fa-fw fa-{{ link.split('||')[1] | trim | default('globe') }}"></i>{#
+                  #}{% endif %}{#
+                    #}{% if not theme.social_icons.icons_only %}{#
+                      #}{{ name }}{#
+                    #}{% endif %}{#
+                #}</a>
+                </span>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          {% if theme.rss %}
+            <div class="feed-link motion-element">
+              <a href="{{ url_for(theme.rss) }}" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          {% endif %}
 
           <nav class="site-state motion-element">
 
@@ -83,32 +109,6 @@
 
           </nav>
 
-          {% if theme.rss %}
-            <div class="feed-link motion-element">
-              <a href="{{ url_for(theme.rss) }}" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          {% endif %}
-
-          <div class="links-of-author motion-element">
-            {% if theme.social %}
-              {% for name, link in theme.social %}
-                <span class="links-of-author-item">
-                  <a href="{{ link.split('||')[0] | trim }}" target="_blank" title="{{ name }}">
-                    {% if theme.social_icons.enable %}
-                      <i class="fa fa-fw fa-{{ link.split('||')[1] | trim | default('globe') }}"></i>{#
-                  #}{% endif %}{#
-                    #}{% if not theme.social_icons.icons_only %}{#
-                      #}{{ name }}{#
-                    #}{% endif %}{#
-                #}</a>
-                </span>
-              {% endfor %}
-            {% endif %}
-          </div>
-
           {% set cc = {'by': 1, 'by-nc': 1, 'by-nc-nd': 1, 'by-nc-sa': 1, 'by-nd': 1, 'by-sa': 1, 'zero': 1} %}
           {% if theme.creative_commons in cc %}
             <div class="cc-license motion-element" itemprop="license">
@@ -119,6 +119,7 @@
           {% endif %}
 
           {# Blogroll #}
+          {#
           {% if theme.links %}
             <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
               <div class="links-of-blogroll-title">
@@ -134,6 +135,7 @@
               </ul>
             </div>
           {% endif %}
+          #}
 
           {% include '../_custom/sidebar.swig' %}
         </div>

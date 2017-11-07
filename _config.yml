@@ -117,12 +117,15 @@ scheme: Pisces
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/yourname || github
-  Twitter: https://twitter.com/yourname || twitter
+  GitHub: https://github.com/DIYgod || github
+  Twitter: https://twitter.com/DIYgod || twitter
+  QQ: https://diygod.b0.upaiyun.com/qq-g.jpg || qq
+  Telegram: https://t.me/awesomeDIYgod || telegram
+  More: https://www.anotherhome.net/3163 || more
 
 social_icons:
   enable: true
-  icons_only: false
+  icons_only: true
   transition: false
 
 # Blog rolls
@@ -151,7 +154,7 @@ toc:
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-#creative_commons: by-nc-sa
+creative_commons: by-nc-sa
 #creative_commons:
 
 sidebar:
@@ -170,7 +173,7 @@ sidebar:
   #display: remove
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
-  offset: 12
+  offset: 52
 
   # Back to top in sidebar (only for Pisces | Gemini).
   b2t: false
@@ -722,9 +725,9 @@ vendors:
   # See: https://faisalman.github.io/ua-parser-js/
   ua_parser: https://cdn.bootcss.com/UAParser.js/0.7.9/ua-parser.min.js
 
-  # Internal version: 4.6.2
+  # Internal version: 4.7.0
   # See: http://fontawesome.io/
-  fontawesome: https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css
+  fontawesome: https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css
 
   social_share_css: https://cdnjs.cat.net/ajax/libs/social-share.js/1.0.9/css/share.min.css
 
@@ -782,3 +785,8 @@ images: images
 version: 5.1.3
 
 header_bg: https://diygod.b0.upaiyun.com/header-sagiri.jpg
+
+card:
+  avatar: /images/card.jpg
+  name: <span style="opacity:.2;">网红</span>DIYgod
+  description: 你能抓到我么？

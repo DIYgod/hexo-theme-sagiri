@@ -2,6 +2,8 @@
 
 .sidebar {
   margin: 0;
+  background: #fff;
+  border-radius: 5px;
 
   // Do NOT delete this line
   // or Affix (position: fixed) will not work in Google Chrome.
@@ -10,18 +12,20 @@
 
 
 .sidebar-inner {
-//padding: 20px 10px 0;
+  padding: 20px;
   box-sizing: border-box;
-  width: 240px;
+  width: 100%;
   color: $text-color;
   background: white;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
+  border-radius: 5px;
   if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) { opacity: 0; }
 
   &.affix {
     position: fixed;
     top: $sidebar-offset;
+    width: $sidebar-desktop;
   }
 
   &.affix-bottom {
@@ -37,6 +41,34 @@
 
 .site-author {
   clearfix();
+  position: relative;
+}
+
+.site-author-image {
+  max-width: none;
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+
+.site-author-name {
+  position: absolute;
+  bottom: 36px;
+  margin: 0 0 0 -65px;
+  font-size: 20px;
+  letter-spacing: .5px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.7);
+  font-weight: 700;
+  width: 130px;
+  left: 50%;
+}
+
+.site-description {
+  font-size: 14px;
+  margin: 5px 0 8px;
+  font-weight: 700;
+  color: #555;
 }
 
 .sidebar a {
@@ -58,9 +90,8 @@
 }
 
 .feed-link {
-  border-top: 1px dotted $grey-light;
-  border-bottom: 1px dotted $grey-light;
   text-align: center;
+  margin: 10px 0 10px;
 }
 
 .feed-link a {
@@ -81,6 +112,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 0 20px;
 }
 .links-of-author-item {
   sidebar-inline-links-item();
@@ -90,14 +122,24 @@
     text-decoration: none;
 
     &:hover {
-      border-radius: 4px;
-      background: $gainsboro;
+      .fa {
+        background: $main-color;
+        color: #fff;
+      }
     }
   }
 
   .fa {
-    margin-right: 2px;
     font-size: 16px;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 42px;
+    color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.1);
+    transition: all .3s ease-in-out;
+    font-style: normal;
   }
   .fa-globe { font-size: 15px; }
 }
@@ -119,4 +161,12 @@
     display: inline-block;
     if !hexo-config('social_icons.icons_only') { width: unset; }
   }
+}
+
+.fa-more:before {
+    content: "∙∙∙";
+}
+
+.post-toc .nav .nav-child {
+  display: block;
 }

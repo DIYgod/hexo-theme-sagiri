@@ -15,7 +15,7 @@ $(document).ready(function () {
     if (headerOffset + sidebarHeight < contentHeight) {
       sidebarInner.affix({
         offset: {
-          top: headerOffset - CONFIG.sidebar.offset,
+          top: headerOffset - 2 * CONFIG.sidebar.offset,
           bottom: footerOffset
         }
       });
