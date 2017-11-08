@@ -1,47 +1,10 @@
-<div class="copyright">{#
-#}{% set current = date(Date.now(), "YYYY") %}{#
-#}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} &mdash; {% endif %}{#
-#}<span itemprop="copyrightYear">{{ current }}</span>
-  <span class="with-love">
-    <i class="fa fa-{{ theme.footer.icon }}"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
-
-  {% if theme.post_wordcount.totalcount %}
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    {% if theme.post_wordcount.item_text %}
-      <span class="post-meta-item-text">{{ __('post.totalcount') }}&#58;</span>
-    {% endif %}
-    <span title="{{ __('post.totalcount') }}">{#
-    #}{{ totalcount(site, '0,0.0a') }}{#
-  #}</span>
-  {% endif %}
-</div>
-
-{% if theme.footer.powered %}
-  <div class="powered-by">{#
-  #}{{ __('footer.powered', '<a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>') }}{#
-#}</div>
-{% endif %}
-
-{% if theme.footer.powered and theme.footer.theme.enable %}
-  <span class="post-meta-divider">|</span>
-{% endif %}
-
-{% if theme.footer.theme.enable %}
-  <div class="theme-info">{#
-  #}{{ __('footer.theme') }} &mdash; {#
-  #}<a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">{#
-    #}NexT.{{ theme.scheme }}{#
-  #}</a>{% if theme.footer.theme.version %} v{{ theme.version }}{% endif %}{#
-#}</div>
-{% endif %}
-
-{% if theme.footer.custom_text %}
-  <div class="footer-custom">{#
-  #}{{ theme.footer.custom_text }}{#
-#}</div>
-{% endif %}
+<p>博客已萌萌哒运行<span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+<p>{{ theme.footer.custom_text }}</p>
+{% set current = date(Date.now(), "YYYY") %}
+<p>© <span itemprop="copyrightYear">{{ current }}</span> {{ config.title }}.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    Theme By <a href="https://github.com/DIYgod/hexo-theme-sagiri" target="_blank" class="external" rel="nofollow">Sagiri</a> v{{ theme.version }}.
+    <a href="{{ url_for(theme.footer.sitemap) }}" target="_blank">站点地图</a>.
+    {{ theme.footer.beian }}.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>. </p>

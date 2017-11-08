@@ -34,29 +34,6 @@ keywords: "Hexo, NexT"
 # Set rss to specific value if you have burned your feed already.
 rss:
 
-footer:
-  # Specify the date when the site was setup.
-  # If not defined, current year will be used.
-  since: 2015
-
-  # Icon between year and copyright info.
-  icon: user
-
-  # If not defined, will be used `author` from Hexo main config.
-  copyright:
-  # -------------------------------------------------------------
-  # Hexo link (Powered by Hexo).
-  powered: true
-
-  theme:
-    # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
-    # Version info of NexT after scheme info (vX.X.X).
-    version: true
-  # -------------------------------------------------------------
-  # Any custom text can be defined here.
-  #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
-
 # ---------------------------------------------------------------
 # SEO Settings
 # ---------------------------------------------------------------
@@ -89,7 +66,6 @@ menu:
   categories: /categories/ || th
   archives: /archives/ || archive
   schedule: /schedule/ || calendar
-  sitemap: /sitemap.xml || sitemap
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -782,7 +758,7 @@ js: js
 images: images
 
 # Theme version
-version: 5.1.3
+version: 0.0.1
 
 header_bg: https://diygod.b0.upaiyun.com/header-sagiri.jpg
 
@@ -790,3 +766,28 @@ card:
   avatar: /images/card.jpg
   name: <span style="opacity:.2;">网红</span>DIYgod
   description: 你能抓到我么？
+
+footer:
+  # Specify the date when the site was setup.
+  # If not defined, current year will be used.
+  since: 2/9/2014 11:30:00
+
+  # Icon between year and copyright info.
+  icon: user
+
+  # If not defined, will be used `author` from Hexo main config.
+  copyright:
+  # -------------------------------------------------------------
+  # Hexo link (Powered by Hexo).
+  powered: true
+
+  theme:
+    # Theme & scheme info link (Theme - NexT.scheme).
+    enable: true
+    # Version info of NexT after scheme info (vX.X.X).
+    version: true
+  # -------------------------------------------------------------
+  # Any custom text can be defined here.
+  custom_text: 托管于<a href="https://github.com/" target="_blank" class="external" rel="nofollow"> GitHub</a>. <a href="https://www.upyun.com/" target="_blank" class="external" rel="nofollow">又拍云</a> 提供 CDN 服务. <a href="http://www.google.com/analytics/" target="_blank" class="external" rel="nofollow">Google Analytics </a>提供网站统计服务. <a href="https://www.cloudflare.com/" target="_blank" class="external" rel="nofollow">Cloudflare </a>提供 DNS 解析服务.
+  sitemap: /sitemap.xml
+  beian: 鲁ICP备16000184号

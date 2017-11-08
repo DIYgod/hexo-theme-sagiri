@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   function initAffix () {
     var headerOffset = getHeaderOffset(),
-        footerOffset = getFooterOffset(),
+        // footerOffset = getFooterOffset(),
         sidebarHeight = $('#sidebar').height() + NexT.utils.getSidebarb2tHeight(),
         contentHeight = $('#content').height();
 
@@ -16,7 +16,7 @@ $(document).ready(function () {
       sidebarInner.affix({
         offset: {
           top: headerOffset - 2 * CONFIG.sidebar.offset,
-          bottom: footerOffset
+          bottom: 540
         }
       });
     }
@@ -37,12 +37,12 @@ $(document).ready(function () {
     return $('.header-inner').height() + CONFIG.sidebar.offset;
   }
 
-  function getFooterOffset () {
-    var footerInner = $('.footer-inner'),
-        footerMargin = footerInner.outerHeight(true) - footerInner.outerHeight(),
-        footerOffset = footerInner.outerHeight(true) + footerMargin;
-    return footerOffset;
-  }
+  // function getFooterOffset () {
+  //   var footerInner = $('.footer-inner'),
+  //       footerMargin = footerInner.outerHeight(true) - footerInner.outerHeight(),
+  //       footerOffset = footerInner.outerHeight(true) + footerMargin;
+  //   return footerOffset;
+  // }
 
   function setSidebarMarginTop (headerOffset) {
     return $('#sidebar').css({ 'margin-top': headerOffset });

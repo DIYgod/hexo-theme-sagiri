@@ -16,3 +16,4 @@ require('./evanyou');
 require('./leancloud');
 require('./share');
 require('./scroll');
+require('./since');

@@ -20,6 +20,7 @@
   box-shadow: $box-shadow;
   border-radius: $border-radius;
   border-radius: 5px;
+  z-index: 2;
   if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) { opacity: 0; }
 
   &.affix {
@@ -30,6 +31,7 @@
 
   &.affix-bottom {
     position: absolute;
+    width: $sidebar-desktop;
   }
 
 }
