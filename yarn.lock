@@ -658,6 +658,10 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.bilibili.co/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
+balloon-css@0.5.0:
+  version "0.5.0"
+  resolved "http://registry.npm.taobao.org/balloon-css/download/balloon-css-0.5.0.tgz#6a3c065efab9ea5f509a95d4315df00aae114fa3"
+
 base64-js@^1.0.2:
   version "1.2.1"
   resolved "http://registry.npm.bilibili.co/base64-js/download/base64-js-1.2.1.tgz#a91947da1f4a516ea38e5b4ec0ec3773675e0886"
@@ -987,6 +991,10 @@ core-js@^2.4.0, core-js@^2.5.0:
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "http://registry.npm.bilibili.co/core-util-is/download/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
+
+corner-notie@1.2.1:
+  version "1.2.1"
+  resolved "http://registry.npm.taobao.org/corner-notie/download/corner-notie-1.2.1.tgz#e1524e07f0d2fc5e603c0ed03b831c576ba767f0"
 
 create-ecdh@^4.0.0:
   version "4.0.0"
@@ -3758,6 +3766,10 @@ type-check@~0.3.2:
   resolved "http://registry.npm.bilibili.co/type-check/download/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
   dependencies:
     prelude-ls "~1.1.2"
+
+typed.js@2.0.6:
+  version "2.0.6"
+  resolved "http://registry.npm.taobao.org/typed.js/download/typed.js-2.0.6.tgz#4e270f6fbc5e5e94a6c38fa29407c404745a7d61"
 
 uglify-js@^2.8.29:
   version "2.8.29"

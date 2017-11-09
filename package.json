@@ -44,12 +44,15 @@
     "webpack": "3.8.1"
   },
   "dependencies": {
+    "balloon-css": "0.5.0",
+    "corner-notie": "1.2.1",
     "fancybox": "3.0.0",
     "fastclick": "1.0.6",
     "headroom.js": "0.9.4",
     "lazyload": "2.0.0-beta.2",
     "leancloud-storage": "3.3.1",
     "social-share.js": "1.0.16",
+    "typed.js": "2.0.6",
     "velocity-animate": "1.5.0"
   }
 }

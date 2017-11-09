@@ -1,8 +1,7 @@
 window.FastClick = require('fastclick');
 require('lazyload');
 require('fancybox')(window.$);
-require('../source/lib/velocity-animate')
-require('../source/lib/velocity-animate/velocity.ui')
+window.notie = require('corner-notie');
 
 require('./utils');
 require('./motion');
@@ -12,8 +11,12 @@ require('./scrollspy');
 require('./post-details');
 require('./bootstrap');
 require('./evanyou');
-// require('./disqus');
 require('./leancloud');
 require('./share');
 require('./scroll');
 require('./since');
+require('./title');
+require('./type');
+require('./kanban');
+require('./mix');
+require('./clipboard');

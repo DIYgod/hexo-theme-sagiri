@@ -10,7 +10,7 @@ $(document).ready(function () {
 
   NexT.utils.registerESCKeyEvent();
 
-  NexT.utils.registerBackToTop();
+  // NexT.utils.registerBackToTop();
 
   // Mobile top menu bar.
   $('.site-nav-toggle button').on('click', function () {
@@ -33,7 +33,7 @@ $(document).ready(function () {
   CONFIG.tabs && NexT.utils.registerTabsTag();
 
   NexT.utils.embeddedVideoTransformer();
-  NexT.utils.addActiveClassToMenuItem();
+  // NexT.utils.addActiveClassToMenuItem();
 
 
   // Define Motion Sequence.

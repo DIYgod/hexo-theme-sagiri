@@ -53,7 +53,7 @@
     <div class="custom-logo-site-title">
       <div class="brand">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">{{ config.title }}</span>
+        <span class="site-title"></span>
         <span class="logo-line-after"><i></i></span>
       </div>
     </div>

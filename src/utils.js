@@ -94,25 +94,25 @@ NexT.utils = NexT.$u = {
     });
   },
 
-  registerBackToTop: function () {
-    var THRESHOLD = 50;
-    var $top = $('.back-to-top');
+  // registerBackToTop: function () {
+  //   var THRESHOLD = 50;
+  //   var $top = $('.back-to-top');
 
-    $(window).on('scroll', function () {
-      $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
+  //   $(window).on('scroll', function () {
+  //     $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
 
-      var scrollTop = $(window).scrollTop();
-      var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
-      var scrollPercent = (scrollTop) / (contentVisibilityHeight);
-      var scrollPercentRounded = Math.round(scrollPercent*100);
-      var scrollPercentMaxed = (scrollPercentRounded > 100) ? 100 : scrollPercentRounded;
-      $('#scrollpercent>span').html(scrollPercentMaxed);
-    });
+  //     var scrollTop = $(window).scrollTop();
+  //     var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
+  //     var scrollPercent = (scrollTop) / (contentVisibilityHeight);
+  //     var scrollPercentRounded = Math.round(scrollPercent*100);
+  //     var scrollPercentMaxed = (scrollPercentRounded > 100) ? 100 : scrollPercentRounded;
+  //     $('#scrollpercent>span').html(scrollPercentMaxed);
+  //   });
 
-    $top.on('click', function () {
-      $('body').velocity('scroll');
-    });
-  },
+  //   $top.on('click', function () {
+  //     $('body').velocity('scroll');
+  //   });
+  // },
 
   /**
    * Transform embedded video to support responsive layout.

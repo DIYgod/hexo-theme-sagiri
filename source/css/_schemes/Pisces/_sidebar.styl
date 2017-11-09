@@ -122,6 +122,7 @@
   a {
     display: block;
     text-decoration: none;
+    overflow: visible;
 
     &:hover {
       .fa {
@@ -171,4 +172,17 @@
 
 .post-toc .nav .nav-child {
   display: block;
+}
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    right: 50px;
+    top: -900px;
+    z-index: 2;
+    width: 70px;
+    height: 900px;
+    background: url('../images/scroll.png');
+    transition: all .5s ease-in-out;
+    opacity: 1;
 }

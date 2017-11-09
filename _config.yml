@@ -19,8 +19,11 @@ override: false
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
+  visibilitychange: true
+  narmal: /images/favicon.ico
+  hidden: /images/failure.ico
+  show_text: (/≧▽≦/)咦！又好了！
+  hide_text: (●—●)喔哟，崩溃啦！
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
@@ -65,7 +68,6 @@ menu:
   about: /about/ || user
   categories: /categories/ || th
   archives: /archives/ || archive
-  schedule: /schedule/ || calendar
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -95,9 +97,9 @@ scheme: Pisces
 social:
   GitHub: https://github.com/DIYgod || github
   Twitter: https://twitter.com/DIYgod || twitter
-  QQ: https://diygod.b0.upaiyun.com/qq-g.jpg || qq
-  Telegram: https://t.me/awesomeDIYgod || telegram
-  More: https://www.anotherhome.net/3163 || more
+  QQ 群: https://diygod.b0.upaiyun.com/qq-g.jpg || qq
+  Telegram Channel: https://t.me/awesomeDIYgod || telegram
+  更多: https://www.anotherhome.net/3163 || more
 
 social_icons:
   enable: true
@@ -600,7 +602,7 @@ tabs:
 
 # Use velocity to animate everything.
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # Transition variants:
