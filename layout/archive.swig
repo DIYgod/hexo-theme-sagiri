@@ -11,22 +11,12 @@
   {#####################}
   {### ARCHIVE BLOCK ###}
   {#####################}
-  <div class="post-block archive">
+  <div class="post-block archive post">
     <div id="posts" class="posts-collapse">
       <span class="archive-move-on"></span>
 
       <span class="archive-page-counter">
-        {% set cheers %}
-        {% set posts_length = site.posts.length %}
-        {% if posts_length > 210 %} {% set cheers = 'excellent' %}
-          {% elif posts_length > 130 %} {% set cheers = 'great' %}
-          {% elif posts_length > 80 %} {% set cheers = 'good' %}
-          {% elif posts_length > 50 %} {% set cheers = 'nice' %}
-          {% elif posts_length > 30 %} {% set cheers = 'ok' %}
-        {% else %}
-          {% set cheers = 'um' %}
-        {% endif %}
-        {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
+        {{ _p("counter.archive_posts", site.posts.length) }} (゜-゜)つロ 干杯~
       </span>
 
       {% for post in page.posts %}

@@ -7,8 +7,9 @@
   background: #000;
   background: rgba(40,42,44,.6);
 
-  +tablet() {
-    display: none !important;
+  +mobile() {
+    position: relative;
+    display: -webkit-box;
   }
 }
 
@@ -24,6 +25,11 @@
   width: $main-desktop;
   position: relative;
   text-align: left;
+
+  +mobile() {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .menu .menu-item {
@@ -35,16 +41,25 @@
   text-align: left;
   margin: 0 20px 0 0;
 
+  +mobile() {
+    flex: 1;
+    -webkit-box-flex: 1;
+    margin: 0;
+  }
+
   a {
     position: relative;
     box-sizing: border-box;
     padding: 0 12px;
-    text-align: left;
     line-height: inherit;
     transition-property: background-color;
     the-transition();
     color: #fff;
     font-size: 14px;
+
+    +mobile() {
+      text-align: center;
+    }
 
     &:hover {
       background: #f9f9f9;
@@ -80,17 +95,6 @@
   }
 }
 
-.site-title {
-  position: relative;
-  top: 180px;
-  font-size: 68px;
-  font-weight: 700;
-  text-align: center;
-  text-shadow: 0 1px 1px #47456d;
-  margin-bottom: 130px;
-  z-index: 1;
-}
-
 .site-subtitle {
   text-align: center;
   text-shadow: 0 1px 1px #47456d;
@@ -112,6 +116,10 @@
   animation: b 1s ease-out;
   position: relative;
   border-radius: 5px;
+
+  +mobile() {
+    display: none;
+  }
 
   .site-master-avatar {
     width: 100px;

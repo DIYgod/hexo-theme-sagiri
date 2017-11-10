@@ -3,9 +3,6 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  +mobile() {
-    display: block;
-  }
 
   button {
     margin-top: 2px;
@@ -16,13 +13,6 @@
 }
 
 .site-nav {
-  +mobile() {
-    display: none;
-    margin: 0 -10px;
-    padding: 0 10px;
-    clear: both;
-    border-top: 1px solid $gray-lighter;
-  }
   +tablet() { display: block !important; }
   +desktop() { display: block !important; }
 }

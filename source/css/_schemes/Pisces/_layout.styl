@@ -1,5 +1,6 @@
 body {
   background: #efefef;
+  cursor: url('../images/cursor.ico'), auto;
 }
 
 .header {
@@ -35,19 +36,13 @@ body {
     position: relative;
     width: auto;
     border-radius: initial;
+    height: 260px;
   }
 }
 
 .main {
   clearfix();
   padding-bottom: 380px;
-
-  +tablet() {
-    padding-bottom: 100px;
-  }
-  +mobile() {
-    padding-bottom: 100px;
-  }
 }
 
 .container .main-inner {
@@ -71,12 +66,12 @@ body {
 
   +tablet() {
     width: 100%;
-    padding: 20px;
+    padding: 0;
     border-radius: initial;
   }
   +mobile() {
     width: 100%;
-    padding: 20px;
+    padding: 0;
     min-height: auto;
     border-radius: initial;
   }
@@ -170,6 +165,10 @@ a {
   position: fixed;
   bottom: 0;
   left: 0;
+
+  +mobile() {
+    display: none;
+  }
 }
 
 

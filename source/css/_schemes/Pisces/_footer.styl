@@ -1,3 +1,15 @@
+.footer-inner {
+  p {
+    +mobile() {
+      padding: 0 5px;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      -o-text-overflow:ellipsis;
+      overflow:hidden;
+    }
+  }
+}
+
 .footer-image {
     background: url('../images/footer.png') no-repeat 50%;
     height: 368px;

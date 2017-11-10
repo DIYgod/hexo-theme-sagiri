@@ -5,23 +5,34 @@
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;
+
+  +mobile() {
+    height: 260px;
+  }
 }
 
 .site-meta {
   padding: 20px 0;
   color: white;
-
-  +tablet() {
-    box-shadow: 0 0 16px rgba(0,0,0,0.5);
-  }
-  +mobile() {
-    box-shadow: 0 0 16px rgba(0,0,0,0.5);
-  }
 }
 
 .brand {
   padding: 0;
   background: none;
+  position: relative;
+  top: 180px;
+  font-size: 68px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 1px 1px #47456d;
+  margin-bottom: 130px;
+  z-index: 1;
+
+  +mobile() {
+    font-size: 7.8vw;
+    top: 40px;
+    margin-bottom: 0;
+  }
 
   &:hover { color: white; }
 }

@@ -1,13 +1,8 @@
-.post-body {
-  +mobile() {
-    text-align: justify;
-  }
-}
-
 .posts-expand {
   padding-top: 0;
 
-  .post-title-link {
+  .post-title-link,
+  .post-title {
     color: #444;
     font-size: 25px;
     font-weight: 700;
@@ -16,6 +11,11 @@
   .post-meta {
     color: #555;
     margin-top: 5px;
+
+    +mobile() {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -25,6 +25,11 @@
   background: #fff;
   margin-bottom: 40px;
   border-radius: 5px;
+
+  +mobile() {
+    padding: 40px 20px;
+    border-radius: 0;
+  }
 }
 
 .post-date {
@@ -40,6 +45,10 @@
   color: #fff;
   text-align: center;
   line-height: 1.1;
+
+  +mobile() {
+    display: none;
+  }
 
   .post-day {
     font-size: 30px;
@@ -60,6 +69,10 @@
   display: inline-block;
   padding: 7px 11px 7px 32px;
   line-height: 1;
+
+  +mobile() {
+    display: none;
+  }
 
   a {
     color: #fff;
@@ -158,11 +171,21 @@
   margin: 0;
   padding: 40px;
   border-radius: 5px;
+
+  +mobile() {
+    border-radius: 0;
+  }
 }
 
 .disqus-loading {
   p {
     margin: 0;
     font-size: 12px;
+  }
+}
+
+.social-share {
+  +mobile() {
+    font-size: 14px;
   }
 }

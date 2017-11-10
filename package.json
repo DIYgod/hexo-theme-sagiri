@@ -40,7 +40,6 @@
     "jshint-stylish": "^2.1.0",
     "strip-loader": "0.1.2",
     "stylint": "^1.5.9",
-    "template-string-optimize-loader": "2.2.3",
     "webpack": "3.8.1"
   },
   "dependencies": {

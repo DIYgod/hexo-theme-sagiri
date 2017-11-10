@@ -17,7 +17,7 @@
 
 {% block content %}
 
-  <div id="posts" class="posts-expand">
+  <div id="posts" class="post posts-expand">
     {##################}
     {### PAGE BLOCK ###}
     {##################}
