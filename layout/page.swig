@@ -8,6 +8,8 @@
     #}{{ __('title.category') + page_title_suffix }}{#
   #}{% elif page.type === "tags" and not page.title %}{#
     #}{{ __('title.tag') + page_title_suffix }}{#
+  #}{% elif page.type === "links" and not page.title %}{#
+    #}{{ __('title.links') + page_title_suffix }}{#
   #}{% else %}{#
     #}{{ page.title + page_title_suffix }}{#
   #}{% endif %}{#
@@ -45,6 +47,23 @@
             <div class="category-all">
               {{ list_categories() }}
             </div>
+          </div>
+        {% elif page.type === 'links' %}
+          <div class="links">
+            {% if theme.links %}
+            <ul>
+              {% for name, link in theme.links %}
+                <li>
+                {% set linkInfo = link.split('||') %}
+                  <a href="{{ linkInfo[0] }}" title="{{ name }}" target="_blank">
+                    <img class="no-fancybox" src="{{ linkInfo[1] }}">
+                    <h4>{{ name }}</h4>
+                    <p>{{ linkInfo[2] }}</p>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
           </div>
         {% else %}
           {{ page.content }}

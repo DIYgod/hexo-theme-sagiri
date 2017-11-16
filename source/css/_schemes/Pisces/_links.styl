@@ -1,0 +1,58 @@
+.post .post-body .links {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    li {
+      float: left;
+      width: 50%;
+      position: relative;
+      transition: all .3s ease-out;
+      border-radius: 5px;
+      list-style: none;
+
+      &:hover {
+        background: rgba(230,244,250,.5);
+      }
+
+      a {
+        display: block;
+        padding: 0 10px 0 90px;
+        height: 90px;
+        color: #555;
+
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          cursor: pointer;
+          margin: 0;
+        }
+
+        h4,
+        p {
+          cursor: pointer;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin: 0;
+        }
+
+        h4 {
+          padding-top: 20px;
+          font-size: 16px;
+        }
+
+        p {
+          margin: 10px 0;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
