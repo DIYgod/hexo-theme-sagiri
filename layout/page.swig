@@ -65,6 +65,7 @@
             </ul>
           {% endif %}
           </div>
+          {{ page.content }}
         {% else %}
           {{ page.content }}
         {% endif %}

@@ -66,7 +66,6 @@ index_with_subtitle: false
 menu:
   home: / || home
   archives: /archives/ || archive
-  实验室: /lab/ || flask
   投喂: /donate/ || cutlery
   后宫: /links/ || mars
   留言板: /message/ || pencil
@@ -208,7 +207,7 @@ sidebar:
 # ---------------------------------------------------------------
 
 # Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: false
+scroll_to_more: true
 
 # Automatically saving scroll position on each post/page in cookies.
 save_scroll: false
