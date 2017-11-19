@@ -30,7 +30,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "DIYgod,blog"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -114,44 +114,7 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 links:
-  A_of_All: https://blog.aofall.com/ || https://linklink.b0.upaiyun.com/A_of_All.jpeg || 待我归来.
-  Aaron: https://aoaoao.me/ || https://linklink.b0.upaiyun.com/Aaron.png || 树洞
-  Balthild: https://qaq.cat/ || https://linklink.b0.upaiyun.com/Balthild.jpg || 轻歌
-  Cee: http://blog.cee.moe/ || https://linklink.b0.upaiyun.com/Cee.jpeg || 九五小鮮肉，大四出國狗
-  FGHRSH: https://www.fghrsh.net/ || https://linklink.b0.upaiyun.com/FGHRSH.jpg || FGHRSH 的博客
-  Fly: https://www.fly3949.com/ || https://linklink.b0.upaiyun.com/Fly.jpg || 喜欢各种瞎折腾
-  freejishu: http://www.freejishu.com/ || https://linklink.b0.upaiyun.com/freejishu.jpg || A New World
-  Jimmy66: http://jimmy66.com/ || https://linklink.b0.upaiyun.com/Jimmy66.jpeg || 一个不断成长，学习着的BMEer
-  journey.ad: https://imjad.cn/ || https://linklink.b0.upaiyun.com/imjad.jpeg || 浊以静之徐清
-  kn007: https://kn007.net/ || https://linklink.b0.upaiyun.com/kn007.jpeg || 这家伙很懒，什么也没有留下
-  kot4ri: https://zankyo.cc/ || https://linklink.b0.upaiyun.com/2016-07-20_kot4ri.jpeg || 残响，记录一个肥宅每天研究的东西。
-  liwanglin12: https://blog.lwl12.com/ || https://linklink.b0.upaiyun.com/lwl.jpeg || 我老婆
-  METO: https://i-meto.com/ || https://linklink.b0.upaiyun.com/meto.jpg || 萨摩公园
-  Micooz: https://apporz.com/ || https://linklink.b0.upaiyun.com/Micooz.png || FullStack Engineer
-  Mokeyjay: http://www.mokeyjay.com/ || https://linklink.b0.upaiyun.com/Mokeyjay.jpg || Just a PHP Noob
-  MonkeyFigaro: http://monkeyfigaro.cn/ || https://linklink.b0.upaiyun.com/MonkeyFigaro.jpg || 脸盲｜路痴｜智障｜拖延症｜LGBT｜非单身
-  myhloli: http://myhloli.com/ || https://linklink.b0.upaiyun.com/myhloli.jpeg || 爱生活，爱萝莉
-  Showfom: https://sb.sb/ || https://linklink.b0.upaiyun.com/Showfom.jpg || 烧饼博客是专注于服务器教程，专业域名投资和见解的博客
-  TyzuaL: https://tyzual.com/ || https://linklink.b0.upaiyun.com/TyzuaL.jpg || 一只潜伏在企鹅群中的小喵
-  u3u: https://quq.cat/ || https://linklink.b0.upaiyun.com/u3u.jpeg || 陪伴是最长情的告白
-  Xcat Liu: http://blog.xcatliu.com/ || https://linklink.b0.upaiyun.com/xcatliu.png || A cat who writes code
-  zchen9: http://www.chen9.info/ || https://linklink.b0.upaiyun.com/zchen9.jpeg || 离用户最近的艺术家
-  ZGQ: http://blog.izgq.net/ || https://linklink.b0.upaiyun.com/ZGQ.jpeg || 高三党一枚
-  zkl2333: http://www.zkl2333.com/ || https://linklink.b0.upaiyun.com/zkl2333.jpeg || zkl2333的博客
-  一曲长歌辞烟雨: https://ls12.me/ || https://linklink.b0.upaiyun.com/%E6%B5%81%E8%A7%9E%E6%9B%B2%E6%B0%B4.png || 相逢千里负烟霞。空山人去远，回首落梅花
-  佳佳: http://luojia.me/ || https://linklink.b0.upaiyun.com/%E4%BD%B3%E4%BD%B3.jpg || 跨次元日常卖萌
-  千千: https://www.dreamwings.cn/ || https://linklink.b0.upaiyun.com/%E5%8D%83%E5%8D%83.jpg || 烟花、绽放之后只剩黑暗
-  变态鹅: https://conoha.vip/ || https://linklink.b0.upaiyun.com/skipper.jpg || 本鹅最喜欢萌妹纸了！
-  吟梦: https://kirainmoe.com/ || https://linklink.b0.upaiyun.com/%E5%90%9F%E6%A2%A6.jpeg || 这家伙很懒，什么也没有留下
-  地瓜: http://digua.moe/ || https://linklink.b0.upaiyun.com/%E5%9C%B0%E7%93%9C.png || 总有一天，咱也要和菊苣一起玩耍！
-  夜绫千裕: https://yecl.net/ || https://linklink.b0.upaiyun.com/%E5%A4%9C%E7%BB%AB%E5%8D%83%E8%A3%95.jpeg || 醒后无所见，耳旁昨日声
-  大袋鼠: http://muguang.me/ || https://linklink.b0.upaiyun.com/%E5%A4%A7%E8%A2%8B%E9%BC%A0.jpg || 这家伙很懒，什么也没有留下
-  小霖: https://xiaolin.in/ || https://linklink.b0.upaiyun.com/%E5%B0%8F%E9%9C%96.png || 岁月静好,现世安稳
-  悠然RE: https://blog.mitsuha.space/ || https://linklink.b0.upaiyun.com/%E6%82%A0%E7%84%B6RE.jpg || 萌萌噠傲嬌妹紙
-  晚风映浮云: https://mxd.moe/ || https://linklink.b0.upaiyun.com/%E6%99%9A%E9%A3%8E%E6%98%A0%E6%B5%AE%E4%BA%91.jpeg || 死宅|渣渣前端|好奇心和猫一样|有强迫症|钟爱火狐|chrome黑|情伤几乎为0|⑨控|萝莉控|已脱团
-  笈川可可: https://blog.0xbbc.com/ || https://linklink.b0.upaiyun.com/2016-08-04_0xBBC.png || a.k.a 神楽坂碧玺，某可爱的蓝孩纸程序猿
-  羡辙: http://zhangwenli.com/ || https://linklink.b0.upaiyun.com/%E7%BE%A1%E8%BE%99.jpeg || 羡辙，字子免，号灵石笠翁
-  音風: https://www.otokaze.cn/ || https://linklink.b0.upaiyun.com/%E9%9F%B3%E9%A2%A8.jpg || 一介布衣的自我修养
+  DIYgos: https://diygod.me || https://diygod.me/images/DIYgod.jpg || Hi, DIYgod
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -528,9 +491,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
-  app_id: Ti5mwFDXXbpWqeWdaydLNfOS-gzGzoHsz
-  app_key: rXpryRyVs5jlk2LAGGI1bfEd
+  enable: false
+  app_id:
+  app_key:
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -746,7 +709,7 @@ vendors:
   # See: http://fontawesome.io/
   fontawesome: https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css
 
-  social_share_css: https://cdnjs.cat.net/ajax/libs/social-share.js/1.0.9/css/share.min.css
+  social_share_css: https://cdn.bootcss.com/social-share.js/1.0.9/css/share.min.css
 
   # Internal version: 1
   # https://www.algolia.com
@@ -829,6 +792,6 @@ footer:
     version: true
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  custom_text: 托管于<a href="https://github.com/" target="_blank" class="external" rel="nofollow"> GitHub</a>. <a href="https://www.upyun.com/" target="_blank" class="external" rel="nofollow">又拍云</a> 提供 CDN 服务. <a href="http://www.google.com/analytics/" target="_blank" class="external" rel="nofollow">Google Analytics </a>提供网站统计服务. <a href="https://www.cloudflare.com/" target="_blank" class="external" rel="nofollow">Cloudflare </a>提供 DNS 解析服务.
+  custom_text: custom text
   sitemap: /sitemap.xml
-  beian: 鲁ICP备16000184号
+  beian: 鲁ICP备xxxx号
