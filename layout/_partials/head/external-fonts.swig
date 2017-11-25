@@ -42,6 +42,14 @@
     {% set font_families += font_config.codes.family + font_styles %}
   {% endif %}
 
+  {% if font_config.title.family and font_config.title.external %}
+    {% if font_found %}
+      {% set font_families += '|' %}
+    {% endif %}
+
+    {% set font_families += font_config.title.family + font_styles %}
+  {% endif %}
+
   {% if font_families !== '' %}
     {% set font_families += '&subset=latin,latin-ext' %}
     {% set font_host = font_config.host | default('//fonts.googleapis.com') %}

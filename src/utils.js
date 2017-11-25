@@ -9,6 +9,8 @@ NexT.utils = NexT.$u = {
       .not('[hidden]')
       .not('.no-fancybox')
       .not('.group-picture img, .post-gallery img')
+      .not('#QR img')
+      .not('.post-share img')
       .each(function () {
         var $image = $(this);
         var imageTitle = $image.attr('title');

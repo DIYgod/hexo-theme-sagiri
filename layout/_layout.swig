@@ -72,7 +72,6 @@
 
   <script type="text/javascript" src="{{ url_for(theme.js) }}/sagiri.min.js?v={{ theme.version }}"></script>
 
-  {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
   {% include '_third-party/seo/baidu-push.swig' %}
   {% include '_third-party/needsharebutton.swig' %}

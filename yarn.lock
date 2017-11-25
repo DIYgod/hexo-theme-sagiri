@@ -1761,6 +1761,10 @@ graceful-fs@~1.2.0:
   version "1.2.3"
   resolved "http://registry.npm.bilibili.co/graceful-fs/download/graceful-fs-1.2.3.tgz#15a4806a57547cb2d2dbf27f42e89a8c3451b364"
 
+gsap@1.20.3:
+  version "1.20.3"
+  resolved "http://registry.npm.taobao.org/gsap/download/gsap-1.20.3.tgz#c9a6e7be057cf59417483448f925472fa2f73cd7"
+
 gulp-jshint@^1.12.0:
   version "1.12.0"
   resolved "http://registry.npm.bilibili.co/gulp-jshint/download/gulp-jshint-1.12.0.tgz#23fbd1bafdd6fbfe61ea64667a74809a961d03de"
@@ -2146,6 +2150,10 @@ isstream@~0.1.2:
 javascript-state-machine@^2.3.5:
   version "2.4.0"
   resolved "http://registry.npm.bilibili.co/javascript-state-machine/download/javascript-state-machine-2.4.0.tgz#d8be31ec38f24ac1a1832f0b672fc3cd5f79c96e"
+
+jquery-pjax@2.0.1:
+  version "2.0.1"
+  resolved "http://registry.npm.taobao.org/jquery-pjax/download/jquery-pjax-2.0.1.tgz#6b3a1ba16e644e624bdcfe72eb6b3d96a846f5f2"
 
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
@@ -2752,6 +2760,10 @@ npmlog@^4.0.2:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/nprogress/download/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
 
 number-is-nan@^1.0.0:
   version "1.0.1"

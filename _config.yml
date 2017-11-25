@@ -67,7 +67,7 @@ menu:
   home: / || home
   archives: /archives/ || archive
   投喂: /donate/ || cutlery
-  后宫: /links/ || mars
+  后宫: /friends/ || mars
   留言板: /message/ || pencil
   about: /about/ || rocket
 
@@ -99,7 +99,7 @@ scheme: Pisces
 social:
   GitHub: https://github.com/DIYgod || github
   Twitter: https://twitter.com/DIYgod || twitter
-  QQ 群: https://diygod.b0.upaiyun.com/qq-g.jpg || qq
+  QQ 群: /images/qq-g.jpg || qq || qq
   Telegram Channel: https://t.me/awesomeDIYgod || telegram
   更多: https://www.anotherhome.net/3163 || more
 
@@ -270,7 +270,7 @@ font:
 
   # Global font settings used on <body> element.
   global:
-    external: true
+    external: false
     family: Lato
     size:
 
@@ -300,6 +300,9 @@ font:
     family:
     size:
 
+  title:
+    external: true
+    family: Sigmar One
 
 # ---------------------------------------------------------------
 # Third Party Services Settings
@@ -326,7 +329,7 @@ han: false
 # Disqus
 disqus:
   enable: true
-  shortname: DIYgod
+  shortname: diygod-me
   count: false
 
 # Hypercomments
@@ -761,10 +764,7 @@ css: css
 js: js
 images: images
 
-# Theme version
-version: 0.0.1
-
-header_bg: https://diygod.b0.upaiyun.com/header-sagiri.jpg
+header_bg: /images/header-sagiri.jpg
 
 card:
   avatar: /images/card.jpg
@@ -794,4 +794,9 @@ footer:
   # Any custom text can be defined here.
   custom_text: custom text
   sitemap: /sitemap.xml
-  beian: 鲁ICP备xxxx号
+  beian: xxxx
+
+online_api:
+
+# Theme version
+version: 0.0.4

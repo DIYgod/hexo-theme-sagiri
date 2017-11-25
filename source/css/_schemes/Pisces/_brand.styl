@@ -22,12 +22,12 @@
   position: relative;
   top: 180px;
   font-size: 68px;
-  font-weight: 700;
   text-align: center;
   text-shadow: 0 1px 1px #47456d;
   margin-bottom: 130px;
   z-index: 1;
-  font-family: Optima, "PingFang SC", "Microsoft YaHei", Lato, sans-serif;
+  font-family: $font-family-title;
+  display: block;
 
   +mobile() {
     font-size: 7.8vw;
@@ -44,3 +44,15 @@
 }
 
 .site-search form { display: none; }
+
+.site-title {
+  .guide {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .animate span {
+    position: absolute;
+    opacity: 0;
+  }
+}

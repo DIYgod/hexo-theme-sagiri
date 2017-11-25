@@ -1,57 +1,62 @@
-$(document).ready(function () {
+function pisces () {
 
-  var sidebarInner = $('.sidebar-inner');
+  $(document).ready(function () {
 
-  initAffix();
-  resizeListener();
+    var sidebarInner = $('.sidebar-inner');
 
-  function initAffix () {
-    var headerOffset = getHeaderOffset(),
+    initAffix();
+    resizeListener();
+
+    function initAffix () {
+      var headerOffset = getHeaderOffset(),
         // footerOffset = getFooterOffset(),
-        sidebarHeight = $('#sidebar').height() + NexT.utils.getSidebarb2tHeight(),
+        sidebarHeight = $('#sidebar').height(),
         contentHeight = $('#content').height();
 
-    // Not affix if sidebar taller then content (to prevent bottom jumping).
-    if (headerOffset + sidebarHeight < contentHeight) {
-      sidebarInner.affix({
-        offset: {
-          top: headerOffset - 2 * CONFIG.sidebar.offset,
-          bottom: 540
+      // Not affix if sidebar taller then content (to prevent bottom jumping).
+      if (sidebarHeight < contentHeight) {
+        sidebarInner.affix({
+          offset: {
+            top: headerOffset - 2 * CONFIG.sidebar.offset,
+            bottom: 540
+          }
+        });
+      }
+
+      // setSidebarMarginTop(headerOffset).css({ 'margin-left': 'initial' });
+    }
+
+    function resizeListener () {
+      var mql = window.matchMedia('(min-width: 991px)');
+      mql.addListener(function (e) {
+        if (e.matches) {
+          recalculateAffixPosition();
         }
       });
     }
 
-    // setSidebarMarginTop(headerOffset).css({ 'margin-left': 'initial' });
-  }
+    function getHeaderOffset () {
+      return $('.header-inner').height() + CONFIG.sidebar.offset;
+    }
 
-  function resizeListener () {
-    var mql = window.matchMedia('(min-width: 991px)');
-    mql.addListener(function(e){
-      if(e.matches){
-        recalculateAffixPosition();
-      }
-    });
-  }
+    // function getFooterOffset () {
+    //   var footerInner = $('.footer-inner'),
+    //       footerMargin = footerInner.outerHeight(true) - footerInner.outerHeight(),
+    //       footerOffset = footerInner.outerHeight(true) + footerMargin;
+    //   return footerOffset;
+    // }
 
-  function getHeaderOffset () {
-    return $('.header-inner').height() + CONFIG.sidebar.offset;
-  }
+    function setSidebarMarginTop (headerOffset) {
+      return $('#sidebar').css({ 'margin-top': headerOffset });
+    }
 
-  // function getFooterOffset () {
-  //   var footerInner = $('.footer-inner'),
-  //       footerMargin = footerInner.outerHeight(true) - footerInner.outerHeight(),
-  //       footerOffset = footerInner.outerHeight(true) + footerMargin;
-  //   return footerOffset;
-  // }
+    function recalculateAffixPosition () {
+      $(window).off('.affix');
+      sidebarInner.removeData('bs.affix').removeClass('affix affix-top affix-bottom');
+      initAffix();
+    }
 
-  function setSidebarMarginTop (headerOffset) {
-    return $('#sidebar').css({ 'margin-top': headerOffset });
-  }
+  });
+}
 
-  function recalculateAffixPosition () {
-    $(window).off('.affix');
-    sidebarInner.removeData('bs.affix').removeClass('affix affix-top affix-bottom');
-    initAffix();
-  }
-
-});
+module.exports = pisces;

@@ -9,7 +9,7 @@
   {######################}
   {### CATEGORY BLOCK ###}
   {######################}
-  <div class="post-block category">
+  <div class="post-block category post">
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">

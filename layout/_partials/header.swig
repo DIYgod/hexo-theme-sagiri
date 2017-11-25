@@ -29,6 +29,13 @@
           </a>
         </li>
       {% endif %}
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count">?</span>人在线</li>
     </ul>
   {% endif %}
 
@@ -53,7 +60,18 @@
     <div class="custom-logo-site-title">
       <div class="brand">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <div class="site-title">
+          <div id="animate" class="animate">
+            {% for letter in config.title %}{#
+              #}<span>{{ letter }}</span>{#
+            #}{% endfor %}
+          </div>
+          <div id="guide" class="guide">
+            {% for letter in config.title %}{#
+              #}<span>{{ letter }}</span>{#
+            #}{% endfor %}
+          </div>
+        </div>
         <span class="logo-line-after"><i></i></span>
       </div>
     </div>
