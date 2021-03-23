@@ -1,0 +1,42 @@
+$darling-blue   = #00a7e0
+$darling-black  = #000
+$darling-red    = #ff3f1a
+
+.theme-darling {
+  .site-title {
+    text-shadow: 1px 1px 0 $darling-red, -1px -1px 0 $darling-blue;
+  }
+
+  .site-master-description {
+  }
+
+  .post-meta {
+    .post-time {
+      color: $darling-blue;
+    }
+    .post-wordcount {
+      color: $darling-black;
+
+      a {
+        color: $darling-black;
+      }
+    }
+    .leancloud_visitors {
+      color: $darling-red;
+    }
+  }
+
+  .site-state-posts .site-state-item-name {
+    color: $darling-blue;
+  }
+
+  .site-state-categories .site-state-item-name {
+    color: $darling-red;
+  }
+
+  .posts-collapse {
+    .post:before {
+      display: none;
+    }
+  }
+}

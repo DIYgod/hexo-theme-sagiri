@@ -10,7 +10,7 @@
             <i class="fa fa-external-link"></i>
           </a>
         {% else %}
-            <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
+            <a class="post-title-link scaleup" href="{{ url_for(post.path) }}" itemprop="url">
               {% if post.type === 'picture' %}
                 {{ post.content }}
               {% else %}

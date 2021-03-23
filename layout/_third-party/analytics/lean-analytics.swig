@@ -39,9 +39,6 @@
               countSpan.text(0);
             }
           }
-        })
-        .then(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
         });
     }
 
@@ -86,10 +83,7 @@
                 console.log('Failed to create');
               });
           }
-        })
-        .then(function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        })
+        });
     }
 
     $(function() {

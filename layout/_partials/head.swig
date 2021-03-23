@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
 
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/DIYgod/diygod.me@gh-pages/fonts/Candyshop.otf" as="font" type="font/otf" crossorigin="anonymous">
 
 {% if theme.pace %}
   {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/'+ theme.pace_theme +'.min.css?v=1.0.2') %}
@@ -53,7 +54,7 @@
 {% if theme.qihu_site_verification %}
   <meta name="360-site-verification" content="{{ theme.qihu_site_verification }}" />
 {% endif %}
-
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 {% if theme.fancybox %}
   {% set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css?v=2.1.5') %}
@@ -78,7 +79,6 @@
 <link href="{{ social_share_uri }}" rel="stylesheet" type="text/css" />
 
 <link href="{{ url_for(theme.css) }}/main.css?v={{ theme.version }}" rel="stylesheet" type="text/css" />
-
 {% if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ theme.version }}">
 {% endif %}
@@ -93,6 +93,9 @@
 {% endif %}
 {% if theme.favicon.ms_browserconfig %}
   <meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}" />
+{% endif %}
+{% if theme.favicon.msapplication_TileColor %}
+  <meta name="msapplication-TileColor" content="{{ theme.android_chrome_color }}">
 {% endif %}
 
 {% if page.keywords %}
@@ -140,7 +143,6 @@
     tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
     since: '{{ theme.footer.since }}',
-    onlineAPI: '{{ theme.online_api }}',
     site: {
       title: '{{ theme.title }}',
       subtitle: '{{ theme.subtitle }}',
@@ -172,10 +174,10 @@
   };
 </script>
 {% set js_vendors = {} %}
-{% set js_vendors.jquery      = 'jquery/index.js?v=2.1.3' %}
+{% set js_vendors.jquery      = true %}
+{% set js_vendors.disqusjs    = true %}
 {% for name, internal in js_vendors %}
-  {% set internal_script = url_for(theme.vendors._internal) + '/' + internal %}
-    <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
+  <script type="text/javascript" src="{{ theme.vendors[name] }}"></script>
 {% endfor %}
 
 {# Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 #}

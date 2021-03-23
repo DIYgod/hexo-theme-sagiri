@@ -9,7 +9,7 @@
   {#################}
   {### TAG BLOCK ###}
   {#################}
-  <div class="post-block tag">
+  <div class="post-block tag post">
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">

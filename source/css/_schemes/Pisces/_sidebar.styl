@@ -12,7 +12,7 @@
 
 
 .sidebar-inner {
-  padding: 20px;
+  padding: 20px 16px;
   box-sizing: border-box;
   width: 100%;
   color: $text-color;
@@ -37,7 +37,6 @@
 }
 
 .site-overview {
-  margin: 0 2px;
   text-align: left;
 }
 
@@ -59,8 +58,8 @@
   margin: 0 0 0 -65px;
   font-size: 20px;
   letter-spacing: .5px;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.7);
+  color: #FF9800;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
   font-weight: 700;
   width: 130px;
   left: 50%;
@@ -68,7 +67,7 @@
 
 .site-description {
   font-size: 14px;
-  margin: 5px 0 8px;
+  margin: 7px 0;
   font-weight: 700;
   color: #555;
 }
@@ -76,7 +75,7 @@
 .sidebar a {
   color: $black-light;
 
-  &:hover { color: $black-deep; }
+  &:hover { color: $link-hover-color; }
 }
 
 .site-state-item {
@@ -94,18 +93,36 @@
 .feed-link {
   text-align: center;
   margin: 10px 0 10px;
-}
+  display: flex;
 
-.feed-link a {
-  display: block;
-  color: $orange;
-  border: none;
+  a {
+    display: inline-block;
+    border: none;
+    flex: 1;
 
-  &:hover {
-    background: none;
-    color: darken($orange, 20%);
+    &:hover {
+      background: none;
+    }
+  }
 
-    i { color: darken($orange, 20%); }
+  .feed-rss {
+    color: $orange;
+
+    &:hover {
+      color: darken($orange, 20%);
+
+      i { color: darken($orange, 20%); }
+    }
+  }
+
+  .feed-email {
+    color: #48c7fb;
+
+    &:hover {
+      color: darken(#48c7fb, 20%);
+
+      i { color: darken(#48c7fb, 20%); }
+    }
   }
 }
 
@@ -114,7 +131,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 .links-of-author-item {
   sidebar-inline-links-item();
@@ -123,26 +140,38 @@
     display: block;
     text-decoration: none;
     overflow: visible;
-
-    &:hover {
-      .fa {
-        background: $main-color;
-        color: #fff;
-      }
-    }
   }
 
-  .fa {
-    font-size: 16px;
+  i {
+    font-size: 12px;
     display: inline-block;
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    border-radius: 42px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
     color: rgba(0,0,0,.5);
-    background-color: rgba(0,0,0,.1);
+    fill: rgba(0,0,0,.5);
+    background-color: rgba(230,244,249,.8);
     transition: all .3s ease-in-out;
     font-style: normal;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content:center;
+    padding: 0 10px;
+
+    &:before,
+    svg {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+
+    svg {
+      width: 18px;
+    }
+
+    span {
+      color: rgba(0,0,0,.5);
+    }
   }
   .fa-globe { font-size: 15px; }
 }
@@ -182,7 +211,71 @@
     z-index: 2;
     width: 70px;
     height: 900px;
-    background: url('../images/scroll.png');
     transition: all .5s ease-in-out;
     opacity: 1;
+}
+
+.views-top-name {
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.views-top {
+  padding: 0;
+  font-size: 12px;
+  margin-bottom: 0;
+
+  a {
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    height: 30px;
+  }
+}
+
+.views-top-title {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.des-of-author {
+  font-size: 12px;
+  margin: 10px 0;
+  color: rgba(0,0,0,.5);
+  border-radius: 4px;
+  min-height: 120px;
+}
+
+.des-of-author-nav {
+  width: 105px;
+  float: left;
+}
+
+.des-of-author-panel {
+  margin-left: 105px;
+}
+
+.des-of-author-des {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.des-of-author-title {
+  display: block;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.active {
+    color: $main-color;
+    &:after {
+      content: "→"
+    }
+  }
 }

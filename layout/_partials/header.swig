@@ -6,12 +6,24 @@
       {% for name, path in theme.menu %}
         {% set itemName = name.toLowerCase() %}
         <li class="menu-item menu-item-{{ itemName | replace(' ', '-') }}">
-          <a href="{{ url_for(path.split('||')[0]) | trim }}" rel="section">
+          <a href="{{ url_for(trim(path.split('||')[0])) }}" rel="section"{% if path.split('||')[2] %} target="_blank"{% endif %}>
             {% if theme.menu_icons.enable %}
-              <i class="menu-item-icon fa fa-fw fa-{{ path.split('||')[1] | trim | default('question-circle') }}"></i> <br />
+              <i class="menu-item-icon {{ trim(path.split('||')[1]) }}"></i> <br />
             {% endif %}
             {{ __('menu.' + name) | replace('menu.', '') }}
           </a>
+          {% if theme.submenu[itemName] %}
+            <ul class="submenu submenu-{{ itemName | replace(' ', '-') }}">
+              {% for name, path in theme.submenu[itemName] %}
+                {% set itemName = name.toLowerCase() %}
+                <li class="submenu-item submenu-item-{{ itemName | replace(' ', '-') }}">
+                  <a href="{{ trim(url_for(path)) }}" rel="section" target="_blank">
+                    {{ __('menu.' + name) | replace('menu.', '') }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </li>
       {% endfor %}
 
@@ -32,10 +44,9 @@
       <li class="menu-item search">
           <form class="search-form">
             <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
-            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+            <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
           </form>
       </li>
-      <li class="menu-item online"><span id="online-count">?</span>人在线</li>
     </ul>
   {% endif %}
 
@@ -46,7 +57,15 @@
   {% endif %}
 </nav>
 
-<div class="site-brand-wrapper" style="background-image: url({{ url_for( theme.header_bg | default(theme.images + '/header.jpg') ) }})">
+<div class="site-brand-wrapper">
+  <div class="site-brand-bg">
+    <picture>
+      <source srcset="https://cdn.jsdelivr.net/gh/DIYgod/diygod.me@gh-pages/images/header-gyx-s.webp" type="image/webp" media="(max-width: 500px)">
+      <source srcset="https://cdn.jsdelivr.net/gh/DIYgod/diygod.me@gh-pages/images/header-gyx-s.png" type="image/png" media="(max-width: 500px)">
+      <source srcset="https://cdn.jsdelivr.net/gh/DIYgod/diygod.me@gh-pages/images/header-gyx.webp" type="image/webp">
+      <img loading="lazy" src="https://cdn.jsdelivr.net/gh/DIYgod/diygod.me@gh-pages/images/header-gyx.png">
+    </picture>
+  </div>
   <div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
     {% if theme.custom_logo.image and theme.scheme === 'Muse' %}
       <div class="site-meta-headline">
@@ -61,9 +80,22 @@
       <div class="brand">
         <span class="logo-line-before"><i></i></span>
         <div class="site-title">
+          <div id="animate-stroke" class="animate">
+            {% for letter in config.title %}{#
+              #}<span>
+                  <svg>
+                    <use xlink:href="#stroke{{ letter }}"></use>
+                  </svg>
+                </span>{#
+            #}{% endfor %}
+          </div>
           <div id="animate" class="animate">
             {% for letter in config.title %}{#
-              #}<span>{{ letter }}</span>{#
+              #}<span>
+                  <svg>
+                    <text id="stroke{{ letter }}">{{ letter }}</text>
+                  </svg>
+                </span>{#
             #}{% endfor %}
           </div>
           <div id="guide" class="guide">
@@ -91,8 +123,8 @@
   </div>
 </div>
 <div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-master-avatar" itemprop="image" src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}" alt="{{ theme.author }}" />
-    <h2 class="site-master-description" itemprop="description">
+    <img class="site-master-avatar scaleup" itemprop="image" src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}" alt="{{ theme.author }}" />
+    <h2 class="site-master-description scaleup" itemprop="description">
         {{ theme.description }}
     </h2>
 </div>

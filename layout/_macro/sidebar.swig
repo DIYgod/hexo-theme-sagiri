@@ -47,10 +47,10 @@
           <div class="links-of-author motion-element">
             {% if theme.social %}
               {% for name, link in theme.social %}
-                <span class="links-of-author-item">
-                  <a href="{{ link.split('||')[0] | trim }}" target="_blank" title="{{ name }}" data-balloon="{{ name }}" data-balloon-pos="up">
+                <span class="links-of-author-item scaleup">
+                  <a href="{{ trim(link.split('||')[0]) }}" target="_blank" title="{{ name }}">
                     {% if theme.social_icons.enable %}
-                      <i class="fa fa-fw fa-{{ link.split('||')[1] | trim | default('globe') }}"></i>{#
+                      {{ link.split('||')[1] }}{#
                   #}{% endif %}{#
                     #}{% if not theme.social_icons.icons_only %}{#
                       #}{{ name }}{#
@@ -61,11 +61,44 @@
             {% endif %}
           </div>
 
+          <div class="des-of-author">
+              <div class="des-of-author-nav">
+                {% for title, des in theme.card.items %}
+                  {% if loop.index === 1 %}
+                    <div class="des-of-author-title active" data-index="{{ loop.index }}">{{ title }}</div>
+                  {% else %}
+                    <div class="des-of-author-title" data-index="{{ loop.index }}">{{ title }}</div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="des-of-author-panel">
+                {% for title, des in theme.card.items %}
+                  {% if loop.index === 1 %}
+                    <div class="des-of-author-des active" data-index="{{ loop.index }}">{{ des }}</div>
+                  {% else %}
+                    <div class="des-of-author-des" data-index="{{ loop.index }}">{{ des }}</div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+          </div>
+
+          <details class="views-top-wrap">
+            <summary class="views-top-name scaleup">看爆 Top5</summary>
+            <ul class="views-top"></ul>
+          </details>
+
+          {#
           {% if theme.rss %}
             <div class="feed-link motion-element">
-              <a href="{{ url_for(theme.rss) }}" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
+              {% if theme.emailfeed %}
+              <a class="feed-email" href="{{ theme.emailfeed }}" rel="alternate" target="_blank">
+                <i class="fas fa-envelope"></i>
+                <span>Email 订阅</span>
+              </a>
+              {% endif %}
+              <a class="feed-rss" href="{{ url_for(theme.rss) }}" rel="alternate" target="_blank">
+                <i class="fas fa-rss"></i>
+                <span>RSS 订阅</span>
               </a>
             </div>
           {% endif %}
@@ -75,7 +108,7 @@
             {% if config.archive_dir != '/' and site.posts.length > 0 %}
               <div class="site-state-item site-state-posts">
               {% if theme.menu.archives %}
-                <a href="{{ url_for(theme.menu.archives).split('||')[0] | trim }}">
+                <a href="{{ trim(url_for(theme.menu.archives).split('||')[0]) }}">
               {% else %}
                 <a href="{{ url_for(config.archive_dir) }}">
               {% endif %}
@@ -95,7 +128,6 @@
                 {% if hasCategoriesPage %}</a>{% endif %}
               </div>
             {% endif %}
-            {#
             {% if site.tags.length > 0 %}
               {% set tagsPageQuery = site.pages.find({type: 'tags'}, {lean: true}) %}
               {% set hasTagsPage = tagsPageQuery.length > 0 %}
@@ -106,25 +138,24 @@
                 {% if hasTagsPage %}</a>{% endif %}
               </div>
             {% endif %}
-            #}
 
           </nav>
 
           {% set cc = {'by': 1, 'by-nc': 1, 'by-nc-nd': 1, 'by-nc-sa': 1, 'by-nd': 1, 'by-sa': 1, 'zero': 1} %}
           {% if theme.creative_commons in cc %}
             <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/{% if theme.creative_commons === 'zero' %}publicdomain/zero/1.0{% else %}licenses/{{ theme.creative_commons }}/4.0{% endif %}/" class="cc-opacity" target="_blank">
+              <a href="https://creativecommons.org/{% if theme.creative_commons === 'zero' %}publicdomain/zero/1.0{% else %}licenses/{{ theme.creative_commons }}/4.0{% endif %}/deed.zh" class="cc-opacity" target="_blank">
                 <img src="{{ url_for(theme.images) }}/cc-{{ theme.creative_commons }}.png" alt="Creative Commons" />
               </a>
             </div>
-          {% endif %}
+          {% endif %}#}
 
           {# Blogroll #}
           {#
           {% if theme.links %}
             <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
               <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
+                <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></span>
                 {{ theme.links_title }}
               </div>
               <ul class="links-of-blogroll-list">

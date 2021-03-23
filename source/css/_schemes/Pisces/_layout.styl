@@ -1,6 +1,6 @@
 body {
   background: #efefef;
-  cursor: url('../images/cursor.ico'), auto;
+  cursor: url('https://cdn.jsdelivr.net/gh/DIYgod/diygod.me@gh-pages/images/cursor.ico'), auto;
 }
 
 .header {
@@ -97,7 +97,7 @@ body {
 
 .footer {
   background: #232323;
-  padding: 15px 0 10px;
+  padding: 15px 0 40px;
   text-align: center;
   color: #888;
   font-size: 12px;
@@ -137,11 +137,12 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
+  background: #efefef;
 }
 
 a {
   border-bottom: 0;
-  color: #795548;
+  color: #ab3300;
 }
 
 .btn {
@@ -153,22 +154,12 @@ a {
   border: none;
 
   &:hover {
-    background: $second-color;
+    background: $main-color;
   }
 }
 
 .posts-expand .post-body .fancybox img {
   border: none;
-}
-
-#live2d {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-
-  +mobile() {
-    display: none;
-  }
 }
 
 
@@ -236,4 +227,12 @@ a {
 .tada {
     -webkit-animation-name: tada;
     animation-name: tada;
+}
+
+.scaleup {
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 }

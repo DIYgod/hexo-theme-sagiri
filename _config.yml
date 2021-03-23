@@ -20,13 +20,13 @@ override: false
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
   visibilitychange: true
-  narmal: /images/favicon.ico
-  hidden: /images/failure.ico
+  narmal: /favicon.ico
+  hidden: /failure.ico
   show_text: (/≧▽≦/)咦！又好了！
   hide_text: (●—●)喔哟，崩溃啦！
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
-  #android_manifest: /images/manifest.json
+  apple_touch_icon: /apple-touch-icon.png
+  safari_pinned_tab: /safari-pinned-tab.svg
+  android_manifest: /manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
@@ -36,6 +36,8 @@ keywords: "DIYgod,blog"
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
 rss:
+
+# emailfeed: http://eepurl.com/dEnzz1
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -64,12 +66,25 @@ index_with_subtitle: false
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
-  home: / || home
-  archives: /archives/ || archive
-  投喂: /donate/ || cutlery
-  后宫: /friends/ || mars
-  留言板: /message/ || pencil
-  about: /about/ || rocket
+  首页: / || fas fa-meteor
+  实验室: javascript:; || fas fa-magic
+  归档: /archives/ || fas fa-archive
+  后宫: /friends/ || fas fa-mars-stroke
+  # 留言板: /message/ || fas fa-comment-dots
+  手办柜: /gk/ || fas fa-child
+  关于我: /about/ || fas fa-heartbeat
+
+submenu:
+  实验室:
+    RSSHub: https://docs.rsshub.app/
+    RSSHub Radar: https://chrome.google.com/webstore/detail/rsshub-radar/kefjpfngnndepjbopdmoebkipbgkggaa
+    DPlayer: http://dplayer.js.org/
+    APlayer: https://aplayer.js.org/
+    NAS: https://nas.diygod.me/
+    Jellyfin: https://jellyfin.diygod.me/
+    Miniflux: https://miniflux.diygod.me/
+    Huginn: https://huginn.diygod.me/
+    监控: https://status.diygod.me/
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -97,11 +112,16 @@ scheme: Pisces
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/DIYgod || github
-  Twitter: https://twitter.com/DIYgod || twitter
-  QQ 群: /images/qq-g.jpg || qq || qq
-  Telegram Channel: https://t.me/awesomeDIYgod || telegram
-  更多: https://www.anotherhome.net/3163 || more
+  Twitter: "https://twitter.com/DIYgod || <i class=\"fab fa-twitter\" style=\"color: #2FB0EC\"><span>DIYgod</span></i>"
+  bilibili: "https://space.bilibili.com/2267573 || <i style=\"fill: #20B0E3;\"><svg t=\"1581180571735\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"1122\"><path d=\"M813.2864 234.5216h-53.0176l46.3872-46.3872c19.8912-19.8912 19.8912-59.648 0-79.5136s-59.648-19.8912-79.5136 0l-132.5312 125.9008h-159.0272l-132.5312-125.9008c-19.8912-19.8912-59.648-19.8912-79.5136 0s-19.8912 59.648 0 79.5136l46.3872 46.3872H216.9088c-92.7744 0-165.6576 72.8832-165.6576 165.6576v357.8112c0 99.4048 72.8832 172.288 165.6576 172.288h589.7216c92.7744 0 165.6576-72.8832 165.6576-165.6576V400.1792c6.6304-92.7744-66.2528-165.6576-159.0272-165.6576z m46.3872 523.4688a59.392 59.392 0 0 1-59.648 59.648H223.5392a59.392 59.392 0 0 1-59.648-59.648V406.8096a59.392 59.392 0 0 1 59.648-59.648h576.4864a59.392 59.392 0 0 1 59.648 59.648v351.1808z m-516.864-291.5328a59.392 59.392 0 0 0-59.648 59.648v59.648c0 33.1264 26.496 59.648 59.648 59.648s59.648-26.496 59.648-59.648v-59.648a59.392 59.392 0 0 0-59.648-59.648z m344.576 0a59.392 59.392 0 0 0-59.648 59.648v59.648c0 33.1264 26.496 59.648 59.648 59.648s59.648-26.496 59.648-59.648v-59.648a59.392 59.392 0 0 0-59.648-59.648z\" p-id=\"1123\"></path></svg><span>DIYgod</span></i>"
+  pixiv: "https://www.pixiv.net/users/15288095 || <i><svg t=\"1581192678406\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"1663\"><path d=\"M701.515 301.152c-44.44-46.092-100.245-64.919-163.08-65.107-29.552-0.089-58.595 4.617-87.095 12.455-28.961 7.965-56.673 18.839-81.996 35.306-3.347 2.176-4.69 4.686-4.695 8.694-0.034 29.713-0.333 59.424-0.426 89.137-0.085 27.263-0.018 54.527-0.021 81.79-0.004 56.836 0.053 113.674-0.097 170.51-0.015 5.326 1.57 8.393 6.639 10.576 17.881 7.7 36.245 13.85 55.161 18.37 30.808 7.36 62.082 10.876 93.715 12.36 33.75 1.583 66.83-1.28 98.832-12.378 61.328-21.265 105.46-61.217 129.447-121.99 15.492-39.25 17.417-80.058 10.877-121.393-7.146-45.173-25.384-85.268-57.26-118.33z\" fill=\"#0074AA\" p-id=\"1664\"></path><path d=\"M512 17.482C238.886 17.482 17.482 238.886 17.482 512S238.886 1006.518 512 1006.518 1006.518 785.114 1006.518 512 785.114 17.482 512 17.482z m327.127 530.516c-18.962 47.58-50.687 84.816-92.709 113.517-43.734 29.872-92.452 46.554-144.647 53.74-66.355 9.136-131.115 0.236-195.108-17.307-12.485-3.423-24.767-7.483-37.009-11.676-4.732-1.62-5.413-1.201-5.42 3.878-0.049 33.583 0.004 67.165-0.069 100.748-0.008 3.782 1.314 5.86 5.093 7.004 7.233 2.187 14.26 5.003 20.384 9.602 3.594 2.699 6.19 5.968 5.824 10.873-0.43 5.752-3.64 8.957-9.432 8.968-19.872 0.039-39.744 0.014-59.617 0.014-19.41 0.006-38.82-0.103-58.23 0.082-4.736 0.045-8.025-1.288-9.814-5.842-1.798-4.575-0.752-8.45 2.566-11.847 5.698-5.833 13.181-8.404 20.593-11 7.625-2.668 7.8-0.933 7.8-10.86-0.02-151.738-0.02-303.476-0.076-455.215-0.001-2.353 1.227-5.726-1.09-6.829-2.297-1.094-4.167 1.976-6 3.442-22.584 18.058-43.474 37.783-60.052 61.694-0.527 0.76-1.03 1.537-1.588 2.273-5.878 7.727-9.827 15.6-5.76 25.855 1.946 4.91 1.707 10.59 0.282 15.968-0.937 3.532-2.436 6.64-5.44 8.865-5.016 3.718-8.469 3.16-11.788-2.085-12.847-20.308-25.59-40.682-38.532-60.928-2.117-3.313-1.999-5.634 0.715-8.492 17.758-18.692 37.058-35.675 57.256-51.635 51.148-40.413 106.911-72.725 168.335-94.902 40.036-14.455 81.234-23.72 123.709-27.312 49.596-4.194 98.488-0.765 146.365 13.295 50.8 14.919 95.584 40.146 131.966 79.103 36.324 38.896 58.162 84.856 65.163 137.62 5.425 40.866 1.694 80.839-13.67 119.389z\" fill=\"#0074AA\" p-id=\"1665\"></path></svg><span>DIYgod</span></i>"
+  GitHub: "https://github.com/DIYgod || <i class=\"fab fa-github\" style=\"color: #191717\"><span>DIYgod</span></i>"
+  Telegram 频道: "https://t.me/awesomeDIYgod || <i class=\"fab fa-telegram\" style=\"color: #41AADE\"><span>TG频道</span></i>"
+  Telegram 群: "https://t.me/prpr233 || <i class=\"fab fa-telegram\" style=\"color: #41AADE\"><span>TG群</span></i>"
+  RSS: "/atom.xml || <i style=\"fill: #F78422;\"><svg t=\"1581190724531\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"16212\"><path d=\"M512 0a512 512 0 1 0 512 512A512 512 0 0 0 512 0z m-130.72 736a71.84 71.84 0 0 1-38.72 38.4 74.24 74.24 0 0 1-56.8 0 72.64 72.64 0 0 1-38.4-38.4 73.44 73.44 0 0 1 16-80 72.48 72.48 0 0 1 22.88-16 72.96 72.96 0 0 1 96 96z m192 32a51.84 51.84 0 0 1-88.32-36.64 187.52 187.52 0 0 0-15.2-75.04 194.08 194.08 0 0 0-102.72-102.72 186.72 186.72 0 0 0-75.04-15.2 51.84 51.84 0 0 1 0-103.52 284.64 284.64 0 0 1 115.2 23.52 300.64 300.64 0 0 1 157.76 157.76 284.96 284.96 0 0 1 23.52 115.2 49.92 49.92 0 0 1-15.52 37.44z m195.84 0a51.84 51.84 0 0 1-88.48-36.64 378.72 378.72 0 0 0-13.92-103.2 393.92 393.92 0 0 0-39.2-92.96 389.92 389.92 0 0 0-232.48-177.76 380 380 0 0 0-103.2-13.92 51.84 51.84 0 0 1-36.64-88.48 49.92 49.92 0 0 1 36.48-15.04 483.2 483.2 0 0 1 130.72 17.6 494.08 494.08 0 0 1 344 344 483.2 483.2 0 0 1 17.6 130.72 50.08 50.08 0 0 1-15.2 36.48z\" p-id=\"16213\"></path></svg><span>RSS</span></i>"
+  PSN: "https://psnprofiles.com/DIYgod_ || <i class=\"fab fa-playstation\" style=\"color: #003791\"><span>DIYgod_</span></i>"
+  Patreon: "https://www.patreon.com/DIYgod || <i><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 180 180\"><path fill=\"#f96753\" d=\"M108.8135992 26.06720125c-26.468266 0-48.00213212 21.53066613-48.00213212 47.99733213 0 26.38653268 21.53386613 47.85426547 48.00213213 47.85426547 26.38639937 0 47.8530655-21.4677328 47.8530655-47.85426547 0-26.466666-21.46666613-47.99733213-47.85306547-47.99733213\"/><path fill=\"#052a49\" d=\"M23.333335 153.93333178V26.0666679h23.46666576v127.8666639z\"/></svg><span>Patreon</span></i>"
+  NS: "javascript:; || <i style=\"fill: #E60012;\"><svg t=\"1581180843998\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"4383\"><path d=\"M255.69989 67c-89.2 16-161 82-183.6 168.8C63.89989 267.2 63.29989 285.6 64.29989 528.8 64.69989 752 64.89989 757.2 68.69989 774.6c20.6 93 86.6 159.2 180.6 181 12.2 2.8 27.8 3.4 128.2 3.8 103.8 0.8 114.6 0.6 117.4-2.2 2.8-2.8 3-38.6 3-444.4 0-301-0.6-442.6-1.8-445.2-1.8-3.4-5-3.6-113.8-3.4-88.4 0.2-115 0.8-126.6 2.8z m167.8 445.2V888l-75.6-1c-69.6-0.8-77-1.2-91-4.6-59.8-15.4-104-61.4-116.6-121.4-4-18.8-4-480.2-0.2-498.6 11.2-52.2 47.4-95.4 96-114.8 24.4-9.8 35.8-11 115.2-11.2l71.8-0.2v376z m-151.8-262.4c-11.6 2.2-29.4 11.2-39 19.4-19.4 16.8-29.2 40.8-27.6 69 0.8 14.6 1.6 18.6 7.6 30.4 8.8 18 21.8 31.2 39.8 40 12.4 6.2 15.6 6.8 31.8 7.4 14.6 0.6 19.8 0 29.6-3.4 40.2-13.6 64.6-52.6 57.6-92.8-7.8-47.4-53.2-79.4-99.8-70z m316.4-184.6c-0.8 0.6-1.2 201.6-1.2 447 0 404.6 0.2 445.6 3 446.8 5 1.8 149 1.2 166.8-0.8 75.4-8.6 142-54.4 178-122.4 4.6-8.8 10.8-23.4 14-32.4 11.6-34.8 11.4-25.6 11.4-292.2 0-212.8-0.4-244.6-3-258-18.4-96.6-92.2-169.6-189-186.2-13-2.2-33-2.8-97.6-2.8-44.8-0.2-81.8 0.4-82.4 1z m198.2 404.2c29 7.6 52.6 29.6 62.4 57.8 6.2 17.4 6 43-0.2 59-11.4 29.4-33.6 50-62.2 57.6-46.4 12-95.8-16-109.2-62-4-14-3.8-37.8 0.8-52.4 13.8-45.4 62-72.2 108.4-60z\" p-id=\"4384\"></path></svg><span>SW-3404-1126-5044</span></i>"
 
 social_icons:
   enable: true
@@ -195,10 +215,10 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
+  wordcount: true
   min2read: false
   totalcount: false
-  separated_meta: true
+  separated_meta: false
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -227,7 +247,7 @@ post_copyright:
 mobile_layout_economy: false
 
 # Android Chrome header panel color ($black-deep).
-android_chrome_color: "#222"
+android_chrome_color: "#fff"
 
 # Custom Logo.
 # !!Only available for Default Scheme currently.
@@ -258,10 +278,10 @@ highlight_theme: normal
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: true
+  enable: false
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
-  host: //fonts.cat.net
+  host: //fonts.loli.net
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -302,7 +322,8 @@ font:
 
   title:
     external: true
-    family: Sigmar One
+    family: Candyshop
+
 
 # ---------------------------------------------------------------
 # Third Party Services Settings
@@ -329,9 +350,8 @@ han: false
 # Disqus
 disqus:
   enable: true
-  shortname: diygod-me
+  shortname:
   count: false
-
 # Hypercomments
 #hypercomments_id:
 
@@ -625,7 +645,7 @@ motion:
     sidebar: slideUpIn
 
 # Fancybox
-fancybox: true
+fancybox: false
 
 # Progress bar in the top during page loading.
 pace: false
@@ -680,8 +700,10 @@ vendors:
   # Internal path prefix. Please do not edit it.
   _internal: lib
 
+  disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1.2.2/dist/disqus.js
+
   # Internal version: 2.1.3
-  jquery: https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js
+  jquery: https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
@@ -710,9 +732,9 @@ vendors:
 
   # Internal version: 4.7.0
   # See: http://fontawesome.io/
-  fontawesome: https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css
+  fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
 
-  social_share_css: https://cdn.bootcss.com/social-share.js/1.0.9/css/share.min.css
+  social_share_css: https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css
 
   # Internal version: 1
   # https://www.algolia.com
@@ -770,6 +792,12 @@ card:
   avatar: /images/card.jpg
   name: <span style="opacity:.2;">网红</span>DIYgod
   description: 你能抓到我么？
+  items:
+    最喜欢的作品: 进击的巨人、四月是你的谎言、摇曳百合、鬼灭之刃、为美好的世界献上祝福！、DARLING in the FRANXX、辉夜大小姐想让我告白、青春猪头少年不会梦到兔女郎学姐、Re：从零开始的异世界生活、埃罗芒阿老师
+    最喜欢的女孩子: 岁纳京子、惠惠、02、宫园薰、阿库娅、樱岛麻衣、雷姆、和泉纱雾、灶门祢豆子、英梨梨、土间埋、山田妖精、明日香、托尔
+    最喜欢的游戏: 集合啦！动物森友会、守望先锋、怪物猎人：世界、地平线：零之曙光、健身环大冒险
+    装备: MacBook Pro (15-inch, 2018)、小米10 Pro、OPPO Watch、PlayStation 4、Nintendo Switch、iPad 6 + Apple Pencil、AirPods Pro
+    工作: 当前 - bilibili HTML5 播放器 & 开源作者<br>即将 - 赴英读研
 
 footer:
   # Specify the date when the site was setup.
@@ -792,11 +820,10 @@ footer:
     version: true
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  custom_text: custom text
+  # custom_text: 托管于<a href="https://github.com/" target="_blank" rel="nofollow"> GitHub</a>. <a href="https://www.upyun.com/" target="_blank" rel="nofollow">又拍云</a> 提供 CDN 服务. <a href="http://www.google.com/analytics/" target="_blank" rel="nofollow">Google Analytics </a>提供网站统计服务. <a href="https://www.cloudxns.net/" target="_blank" rel="nofollow">CloudXNS </a>提供 DNS 解析服务.
   sitemap: /sitemap.xml
-  beian: xxxx
 
-online_api:
+description: 写代码是热爱，写到世界充满爱！
 
 # Theme version
-version: 0.0.4
+version: 0.0.74

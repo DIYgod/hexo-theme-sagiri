@@ -1,16 +1,11 @@
 .site-nav {
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  position: fixed;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
   z-index: 3;
-  background: #000;
-  background: rgba(40,42,44,.6);
-
-  +mobile() {
-    position: relative;
-    display: -webkit-box;
-  }
+  background: linear-gradient(rgba(0,0,0,.3),transparent);
 }
 
 .site-nav-on {
@@ -35,8 +30,8 @@
 .menu .menu-item {
   border: 0;
   display: inline-block;
-  height: 38px;
-  line-height: 38px;
+  height: 58px;
+  line-height: 58px;
   position: relative;
   text-align: left;
   margin: 0 20px 0 0;
@@ -56,22 +51,15 @@
     transition-property: background-color;
     the-transition();
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
+    border-bottom: none;
 
     +mobile() {
       text-align: center;
       padding: 0;
     }
 
-    &:hover {
-      background: #f9f9f9;
-      border-bottom: none;
-      color: #555;
-    }
-
-    .fa {
-      margin-right: 2px;
-
+    i {
       +mobile() {
         display: none;
       }
@@ -84,32 +72,26 @@
 
   br { display: none; }
 
-  &.online {
-    float: right;
-    font-size: 12px;
-    margin: 0;
-
-    +mobile() {
-      display: none;
-    }
-  }
-
   &.search {
     float: right;
     margin: 0 0 0 20px;
 
+    +mobile() {
+      display: none;
+    }
+
     &:hover {
       .search-input {
-        padding: 3px 7px;
-        width: 100px;
+        padding: 8px;
+        width: 120px;
       }
     }
 
     .search-input {
       border: none;
-      border-radius: 2px;
+      border-radius: 4px;
       color: #555;
-      font-size: 12px;
+      font-size: 13px;
       outline: none;
       width: 0;
       padding: 3px 0;
@@ -127,6 +109,7 @@
       i {
         font-size: 17px;
         margin: 0;
+        text-shadow: 0 1px 1px rgba(0,0,0,.3)
       }
     }
   }
@@ -178,11 +161,72 @@
     width: 100px;
     height: 100px;
     border-radius: 100%;
+    border: 2px dashed #fff;
+    padding: 5px;
   }
 
   .site-master-description {
     font-size: 18px;
     font-weight: 700;
     margin: 20px 0 0;
+    display: inline-block;
+    color: $main-color;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+  }
+}
+
+.submenu {
+  position: absolute;
+  padding: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  list-style-type: none;
+  top: 58px;
+  background: rgb(255,255,255);
+  height: 0;
+  overflow: hidden;
+  transition: height 0.2s ease-in-out;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.14)
+
+  .submenu-item {
+    transition: 0.2s ease-in-out;
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  &.submenu-抓到我 {
+    left: -12px;
+    right: -12px;
+
+    +mobile() {
+      left: -32px;
+      right: -32px;
+    }
+  }
+
+  &.submenu-实验室 {
+    left: -10px;
+    right: -10px;
+
+    +mobile() {
+      left: -30px;
+      right: -30px;
+    }
+  }
+}
+
+.menu .menu-item .submenu a {
+  border-bottom: none;
+  line-height: 20px;
+  padding: 10px 0;
+  color: #444;
+  text-shadow: none;
+  font-size: 14px;
+
+  +mobile() {
+    padding: 8px 0;
   }
 }

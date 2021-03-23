@@ -8,6 +8,7 @@ const gsap = require('gsap');
 const TweenLite = gsap.TweenLite;
 
 const animatedText = document.getElementById('animate');
+const animatedTextStroke = document.getElementById('animate-stroke');
 const guideText = document.getElementById('guide');
 
 // select the spans in in the guide
@@ -15,6 +16,7 @@ const guideSpans = guideText.getElementsByTagName('span');
 
 // select the spans in in the guide
 const animatedSpans = animatedText.getElementsByTagName('span');
+const animatedSpansStroke = animatedTextStroke.getElementsByTagName('span');
 
 const textLength = guideSpans.length;
 
@@ -23,19 +25,23 @@ const placeSpans = () => {
   for (var i = 0; i < textLength; i++) {
     let guide = guideSpans[i];
     let animated = animatedSpans[i];
+    let animatedStroke = animatedSpansStroke[i];
     // get the guide client rect
     let rect = guide.getBoundingClientRect();
     // set the left property of the animate
     // span to rect.left
     animated.style.left = rect.left + 'px';
+    animatedStroke.style.left = rect.left + 'px';
   }
 }
 
 
 const animateLetterIn = (i) => {
   setTimeout(() => {
-    TweenLite.fromTo(animatedSpans[i], 0.4, { opacity: 0, y: 40 }, { opacity: 1, y: 0, ease: Power3.easeOut });
-    TweenLite.fromTo(animatedSpans[i], 0.4, { scale: 0 }, { scale: 1, ease: Back.easeOut });
+    TweenLite.fromTo(animatedSpans[i], 0.4, { opacity: 0, y: 40 }, { opacity: 1, y: 0, ease: gsap.Power3.easeOut });
+    TweenLite.fromTo(animatedSpans[i], 0.4, { scale: 0 }, { scale: 1, ease: gsap.Back.easeOut });
+    TweenLite.fromTo(animatedSpansStroke[i], 0.4, { opacity: 0, y: 40 }, { opacity: 1, y: 0, ease: gsap.Power3.easeOut });
+    TweenLite.fromTo(animatedSpansStroke[i], 0.4, { scale: 0 }, { scale: 1, ease: gsap.Back.easeOut });
   }, i * 200);
 
   // if (i === textLength - 1) {
@@ -47,7 +53,7 @@ const animateLetterIn = (i) => {
 
 const animateLetterOut = (i) => {
   setTimeout(() => {
-    TweenLite.to(animatedSpans[i], 0.4, { opacity: 0, y: 40, scale: 0, ease: Power3.easeIn });
+    TweenLite.to(animatedSpans[i], 0.4, { opacity: 0, y: 40, scale: 0, ease: gsap.Power3.easeIn });
   }, i * 200);
 
   if (i === textLength - 1) {
@@ -77,16 +83,25 @@ const resizeText = (text, fontSize) => {
 }
 
 const resize = () => {
-  let fontSize = window.innerWidth / 9;
+  let fontSize = window.innerWidth / 8;
   if (fontSize > 100) fontSize = 100;
   (fontSize * -0.5) + 'px';
   resizeText(animatedText, fontSize);
   resizeText(guideText, fontSize);
+  resizeText(animatedTextStroke, fontSize);
   placeSpans();
 }
 
-setTimeout(() => {
-  resize();
-  animateIn();
-  window.addEventListener('resize', resize);
-}, 100);
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => {
+    resize();
+    animateIn();
+    window.addEventListener('resize', resize);
+  });
+} else {
+  setTimeout(() => {
+    resize();
+    animateIn();
+    window.addEventListener('resize', resize);
+  }, 500);
+}

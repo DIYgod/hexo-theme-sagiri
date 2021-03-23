@@ -47,7 +47,15 @@ for $mixin in $mixins
 @import "../../node_modules/nprogress/nprogress.css"
 
 #nprogress .bar {
-  background: #97dffd;
+  background: $main-color;
 }
 
-@import "../../node_modules/balloon-css/balloon.css"
+.post-body .aplayer {
+  margin-bottom: 30px;
+}
+
+@import "../../node_modules/aplayer/dist/APlayer.min.css"
+
+@import "../../node_modules/zoom-image/css/zoom-image.css"
+
+@import "../../node_modules/disqusjs/dist/disqusjs.css"

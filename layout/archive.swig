@@ -13,11 +13,15 @@
   {#####################}
   <div class="post-block archive post">
     <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        {{ _p("counter.archive_posts", site.posts.length) }} (゜-゜)つロ 干杯~
-      </span>
+      <h1 class="post-collapse-title" itemprop="name headline">归档</h1>
+      <div class="category-all-page">
+        <div class="category-all-title">
+            分类
+        </div>
+        <div class="category-all">
+          {{ list_categories() }}
+        </div>
+      </div>
 
       {% for post in page.posts %}
 
@@ -26,16 +30,21 @@
         {% set post.year = date(post.date, 'YYYY') %}
 
         {% if post.year !== year %}
-          {% set year = post.year %}
-          <div class="collection-title">
-            <{% if theme.seo %}h2{% else %}h1{% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
+          {% if year %}
           </div>
+          {% endif %}
+          {% set year = post.year %}
+          <div class="collection-year">
+            <div class="collection-title">
+              <{% if theme.seo %}h2{% else %}h1{% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
+            </div>
         {% endif %}
         {# endshow #}
 
         {{ post_template.render(post) }}
 
       {% endfor %}
+      </div>
 
     </div>
   </div>

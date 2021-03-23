@@ -1,0 +1,63 @@
+$darling-blue   = #00a7e0
+$darling-black  = #000
+$darling-red    = #ff3f1a
+
+.theme-mai {
+  .site-title {
+    text-shadow: 1px 1px 0 $darling-red, -1px -1px 0 $darling-blue;
+  }
+
+  .site-brand-wrapper {
+    background-image: url(/images/header-mai.jpg) !important;
+    background-position: center top ;
+  }
+
+  .site-master-description {
+    span:nth-child(1) {
+      color: $darling-blue !important;
+    }
+    span:nth-child(2) {
+      color: $darling-red !important;
+    }
+  }
+
+  .post-meta {
+    .post-time {
+      color: $darling-blue;
+    }
+    .post-wordcount {
+      color: $darling-black;
+
+      a {
+        color: $darling-black;
+      }
+    }
+    .leancloud_visitors {
+      color: $darling-red;
+    }
+  }
+
+  .site-author-name {
+    text-shadow: 1px 1px 0 $darling-red, -1px -1px 0 $darling-blue;
+  }
+
+  .site-state-posts .site-state-item-name {
+    color: $darling-blue;
+  }
+
+  .site-state-categories .site-state-item-name {
+    color: $darling-red;
+  }
+
+  .posts-collapse {
+    .post:before {
+      display: none;
+    }
+  }
+
+  .brand {
+    +mobile() {
+      top: 60px;
+    }
+  }
+}

@@ -37,6 +37,14 @@ function postDetails () {
     var TAB_ANIMATE_DURATION = 200;
     var hasVelocity = $.isFunction(html.velocity);
 
+    $('.des-of-author-title').click(function () {
+      $('.des-of-author-title.active').removeClass('active');
+      $('.des-of-author-des.active').removeClass('active');
+      const index = $(this).data('index');
+      $(this).addClass('active');
+      $(`.des-of-author-des[data-index="${index}"]`).addClass('active');
+    });
+
     $('.sidebar-nav li').on('click', function () {
       var item = $(this);
       var activeTabClassName = 'sidebar-nav-active';
@@ -71,7 +79,7 @@ function postDetails () {
     });
 
     // TOC item animation navigate & prevent #item selector in adress bar.
-    $('.post-toc a').on('click', function (e) {
+    $('.post-toc-content a').on('click', function (e) {
       e.preventDefault();
       var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
       var offset = $(targetSelector).offset().top;
